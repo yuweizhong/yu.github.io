@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="second"/>
+        <meta property="og:title" content="iOS开发之状态栏导航栏"/>
     
 
     <!--Open Graph Description-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>second - YuWeizhong</title>
+    <title>iOS开发之状态栏导航栏 - YuWeizhong</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -154,7 +154,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>second</h1>
+                    <h1>iOS开发之状态栏导航栏</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -182,8 +182,7 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p><strong>iOS开发之状态栏导航栏</strong></p>
-<hr>
+                <h1 id="iOS开发之状态栏导航栏"><a href="#iOS开发之状态栏导航栏" class="headerlink" title="iOS开发之状态栏导航栏"></a><strong>iOS开发之状态栏导航栏</strong></h1><hr>
 <h1 id="​状态栏"><a href="#​状态栏" class="headerlink" title="​状态栏"></a><code>​</code>状态栏</h1><h2 id="全局设置"><a href="#全局设置" class="headerlink" title="全局设置"></a>全局设置</h2><p>将info.plist文件的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Viewcontroller-based status bar ppearance</div></pre></td></tr></table></figure></p>
 <p>设置为NO，即可开启全局设置，也就是说你在VC中对状态栏的控制都将无效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//设置状态栏的字体颜色模式</div><div class="line">&gt; [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];</div><div class="line">//设置状态栏是否隐藏</div><div class="line">[[UIApplication sharedApplication] setStatusBarHidden:YES];</div><div class="line">UIStatusBarStyleDefault和UIStatusBarStyleLightContent，前者是默认的黑色，而后者是白色。</div></pre></td></tr></table></figure></p>
 <h2 id="分页面设置"><a href="#分页面设置" class="headerlink" title="分页面设置"></a>分页面设置</h2><p>将info.plist文件的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Viewcontroller-based status bar ppearance</div></pre></td></tr></table></figure></p>
@@ -191,8 +190,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (UIStatusBarStyle)preferredStatusBarStyle</div><div class="line">&#123;</div><div class="line"> //返回白色</div><div class="line"> return UIStatusBarStyleLightContent;</div><div class="line"> //返回黑色</div><div class="line"> //return UIStatusBarStyleDefault;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>保险起见，在view的某个加载阶段比如viewWillAppear中，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[self setNeedsStatusBarAppearanceUpdate];</div></pre></td></tr></table></figure></p>
 <p>2) 当VC在UINavigationController中时，VC并不能通过1)的方式控制状态栏的颜色，详见本文后面的参考资料，那么这个时候，有一个trick的方法可以在VC中间接的控制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">self.navigationController.navigationBar.barStyle = UIBarStyleBlack;</div></pre></td></tr></table></figure></p>
-<p>### </p>
-<h1 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h1><p>导航栏背景控制 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];</div></pre></td></tr></table></figure></p>
+<h1 id="导航栏"><a href="#导航栏" class="headerlink" title="##导航栏"></a>##导航栏</h1><p>导航栏背景控制 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];</div></pre></td></tr></table></figure></p>
 <p>导航栏背景图片 ：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@ &quot;nav_bg.png&quot; ]  forBarMetrics:UIBarMetricsDefault]; （图片64px覆盖状态栏）</div></pre></td></tr></table></figure>
 <p>导航栏标题设置 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">NSShadow *shadow = [[NSShadow alloc] init]; </div><div class="line"> shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8]; </div><div class="line"> shadow.shadowOffset = CGSizeMake(0, 1); </div><div class="line"> [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: </div><div class="line"> [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName, </div><div class="line"> shadow, NSShadowAttributeName, </div><div class="line"> [UIFont fontWithName:@ &quot;HelveticaNeue-CondensedBlack&quot; size:21.0], NSFontAttributeName, nil]];</div></pre></td></tr></table></figure></p>
