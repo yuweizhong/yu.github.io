@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="YuWeizhong"/>
+        <meta property="og:title" content="&#39;iOS加密和苹果证书&#39;"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>归档 - YuWeizhong</title>
+    <title>&#39;iOS加密和苹果证书&#39; - YuWeizhong</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -146,75 +146,98 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>归档</h1>
+                <div class="post-heading">
+                    <h1>'iOS加密和苹果证书'</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-09-02
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/yu.github.io/2017/09/02/iOS加密和苹果证书/">
-        <h1 class="post-title archive">
-            'iOS加密和苹果证书'
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-09-02
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/yu.github.io/2017/08/26/iOS开发之状态栏导航栏/">
-        <h1 class="post-title archive">
-            iOS开发之状态栏导航栏
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-26
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/yu.github.io/2017/08/21/FirstBlog/">
-        <h1 class="post-title archive">
-            First Blog
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-21
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h4 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h4><ul>
+<li><p>base_64加密:最常见的用于传输8位字节代码的编码方式之一。更多的感觉Base_64是作为一个字符编码方式，而不是一个加密算法，用GMT</p>
+</li>
+<li><p>MD5加密:Message-Digest Algorithm 5，严格来说是一种摘要算法，MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值</p>
+</li>
+<li><p>DES加密:Data Encryption Standard：对称算法，数据加密标准，速度较快，适用于加密大量数据的场合；</p>
+</li>
+<li><p>HMAC加密算法：依赖于CommonCryptor库.主要应用于身份验证，为了防止匿名攻击，服务器需要确保每个请求都是从被信任的客户端发起的</p>
+</li>
 </ul>
+<ol>
+<li>客户端发出登录请求</li>
+<li>服务器返回一个随机值（key），在会话记录中保存这个随机值</li>
+<li>客户端将该随机值作为密钥，用户密码进行 hmac 运算，递交给服务器</li>
+<li>服务器读取数据库中的用户密码，利用密钥做和客户端一样的 hmac运算，然后与用户发送的结果比较，如果一致，则用户身份合法。</li>
+</ol>
+<ul>
+<li>RSA加密:非对称加密算法，加密的密钥和解密的秘钥不相同；<pre><code>公钥，可以对外给任何人的加密和解密密码，公开的，可以任何人访问
+私钥，私钥是一定要严格保护的，通过私钥可以生成公钥，但是从公钥可以认为是永远无法推导出私钥的
+</code></pre><h6 id="RSA加密主要包含-密钥生成算法、加密算法和解密算法三部"><a href="#RSA加密主要包含-密钥生成算法、加密算法和解密算法三部" class="headerlink" title="RSA加密主要包含 密钥生成算法、加密算法和解密算法三部"></a>RSA加密主要包含 密钥生成算法、加密算法和解密算法三部</h6><pre><code>1.  通过密钥生成算法生成公钥(Public Key)和私钥(Primary Key)，公钥一般公开给客户端，私钥由服务器保留
+2.  客户端通过公钥进行加密，传给服务端
+3.  服务端收到客户端数据包之后用私钥解密得到对应数据
+</code></pre><h6 id="RSA签名（认证）主要包含-密钥生成算法、签名算法和验证算法"><a href="#RSA签名（认证）主要包含-密钥生成算法、签名算法和验证算法" class="headerlink" title="RSA签名（认证）主要包含 密钥生成算法、签名算法和验证算法"></a>RSA签名（认证）主要包含 密钥生成算法、签名算法和验证算法</h6><pre><code>1.  通RSA加密相同的生成公钥(Public Key)和私钥(Primary Key)
+2.  通过私钥和数据包（一般为文件）进行加密,实现对文件的签名
+3.  将数据包（文件）通过公钥解密，验证签名
+</code></pre></li>
+</ul>
+<hr>
+<h4 id="苹果证书"><a href="#苹果证书" class="headerlink" title="苹果证书"></a>苹果证书</h4><h6 id="证书类型"><a href="#证书类型" class="headerlink" title="证书类型"></a>证书类型</h6><ul>
+<li style="list-style: none"><input type="checkbox"> 开发证书:一般为99证书，开发真机调试用</li>
+<li style="list-style: none"><input type="checkbox"> 发布证书：app发布到appstore时候打包使用</li>
+<li style="list-style: none"><input type="checkbox"> 推送证书：ConnectCenter创建推送证书，注册推送功能</li>
+<li style="list-style: none"><input type="checkbox"> 企业证书：299证书，不需要发布到appstore，打包信任后即可安装</li>
+</ul>
+<h6 id="证书申请使用"><a href="#证书申请使用" class="headerlink" title="证书申请使用"></a>证书申请使用</h6><ol>
+<li>开发者使用Mac电脑像CA机构创建证书申请，本地会生成csr文件，同时秘钥保存在本地（后续打发布的包用于Xcode验证）</li>
+<li>开发者在ConnectCenter上传csr文件申请证书，并下载到本地，双击打开后从钥匙串生成.p12文件可用于其他设备打包发布</li>
+<li>生成成provisioning profile时选择对应的证书，然后下载安装相应的provisioning文件（称描述文件），描述文件包含公钥、设备信息、开发者信息、过期信息等等；</li>
+<li>在程序打包时，会用私钥就代码进行加密，然后把provisioning文件包含到app文件中。当iOS设备安装应用时，首先用CA的公钥解密出开发者的公钥，然后再用开发者的公钥解密出代码，完成安装</li>
+</ol>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
