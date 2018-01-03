@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="@property&#39;"/>
+        <meta property="og:title" content="iOS @property"/>
     
 
     <!--Open Graph Description-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>@property&#39; - YuWeizhong</title>
+    <title>iOS @property - YuWeizhong</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -154,7 +154,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>@property'</h1>
+                    <h1>iOS @property</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -227,9 +227,7 @@
 <p><strong>B. 怎么用 copy 关键字？</strong></p>
 <p>用途：</p>
 <p>NSString、NSArray、NSDictionary 等等经常使用copy关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary，他们之间可能进行赋值操作，为确保对象中的字符串值不会无意间变动，应该在设置新属性值时拷贝一份。<br>block 也经常使用 copy 关键字,block 使用 copy 是从 MRC 遗留下来的“传统”,在 MRC 中,方法内部的 block 是在栈区的,使用 copy 可以把它放到堆区.在 ARC 中写不写都行；</p>
-<blockquote>
 <p>copy 此特质所表达的所属关系与 strong 类似。然而设置方法并不保留新值，而是将其“拷贝” (copy)。 当属性类型为 NSString 时，经常用此特质来保护其封装性，因为传递给设置方法的新值有可能指向一个 NSMutableString 类的实例。这个类是 NSString 的子类，表示一种可修改其值的字符串，此时若是不拷贝字符串，那么设置完属性之后，字符串的值就可能会在对象不知情的情况下遭人更改。所以，这时就要拷贝一份“不可变” (immutable)的字符串，确保对象中的字符串值不会无意间变动。只要实现属性所用的对象是“可变的” (mutable)，就应该在设置新属性值时拷贝一份。</p>
-</blockquote>
 <p><strong>C.用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？</strong></p>
 <p>str1使用copy关键字 str2使用strong关键字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">-(void)test</div><div class="line">&#123;</div><div class="line">    NSMutableString*str=[NSMutableString stringWithFormat:@&quot;helloworld&quot;];</div><div class="line">    self.str1=str;</div><div class="line">    self.str2=str;</div><div class="line">    NSLog(@&quot;str:%p--%p&quot;,str,&amp;str);</div><div class="line">    NSLog(@&quot;copy_str:%p--%p&quot;,_str1,&amp;_str1);</div><div class="line">    NSLog(@&quot;strong_str:%p--%p&quot;,_str2,&amp;_str2);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>运行结果</p>
