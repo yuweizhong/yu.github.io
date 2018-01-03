@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Personal Blog">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="YuWeizhong">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="@property&#39;"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Personal Blog" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="YuWeizhong"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>@property&#39; - YuWeizhong</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/yu.github.io/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/yu.github.io/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/yu.github.io/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/yu.github.io/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/yu.github.io/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/yu.github.io/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/yuweizhong/yu.github.io">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>@property'</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-09-16
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/yu.github.io/tags/iOS-property-copy-weak-strong/">#iOS property copy weak strong</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>对于property，iOS开发者并不会陌生，无时无刻不在接触可是<strong>@property 的本质是什么？</strong></p>
+<blockquote>
+<p>@property = ivar + getter + setter;</p>
+</blockquote>
+<p>“属性” (property)有两大概念：ivar（实例变量）、存取方法（access method ＝ getter + setter）<br>“属性” (property)作为 Objective-C 的一项特性，主要的作用就在于封装对象中的数据。 Objective-C 对象通常会把其所需要的数据保存为各种实例变量。实例变量一般通过“存取方法”(access method)来访问。其中，“获取方法” (getter)用于读取变量值，而“设置方法” (setter)用于写入变量值。这个概念已经定型，并且经由“属性”这一特性而成为 Objective-C 2.0 的一部分。<br>property在runtime中是objc_property_t定义如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">typedef struct objc_property *objc_property_t;</div></pre></td></tr></table></figure></p>
+<p>而objc_property是一个结构体，包括name和attributes，定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">struct property_t &#123;</div><div class="line">     const char *name;</div><div class="line">     const char *attributes;</div><div class="line"> &#125;;</div></pre></td></tr></table></figure></p>
+<p>而attributes本质是objc_property_attribute_t，定义了property的一些属性，定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/// Defines a property attribute</div><div class="line">typedef struct &#123;</div><div class="line">    const char *name;           /**&lt; The name of the attribute */</div><div class="line">    const char *value;          /**&lt; The value of the attribute (usually empty) */</div><div class="line">&#125; objc_property_attribute_t;</div></pre></td></tr></table></figure></p>
+<h4 id="property属性关键字"><a href="#property属性关键字" class="headerlink" title="@property属性关键字"></a>@property属性关键字</h4><ul>
+<li><p>nonatomic —原子性<br>在默认情况下，由编译器合成的方法会通过锁定机制确保其原子性(atomicity)。如果属性具备 nonatomic 特质，则不使用自旋锁。请注意，尽管没有名为“atomic”的特质(如果某属性不具备 nonatomic 特质，那它就是“原子的” ( atomic) )，但是仍然可以在属性特质中写明这一点，编译器不会报错。若是自己定义存取方法，那么就应该遵从与属性特质相符的原子性。</p>
+</li>
+<li><p>readwrite(读写)、readonly (只读) — 读/写权限</p>
+</li>
+<li><p>assign、strong、 weak、unsafe_unretained、copy — 内存管理语义</p>
+</li>
+</ul>
+<ol>
+<li>assign<br>简单赋值，不更改索引计数。 对基础数据类型 （例如NSInteger，CGFloat）和C数据类型（int, float, double, char, 等），适用简单数据类型。</li>
+<li>strong(强引用)<br>ARC下的一个关键字。被强引用指向的内存不会被释放。强引用会对引用计数+1，从而拓展对象的生命周期。（retain调用的ARC版本）</li>
+<li>weak弱引用：<br>弱引用是一种特殊的引用类型。它不会增加引用计数因而不会拓展对象的生命周期。当没有强引用指向对象时，弱引用会被置为nil。在对象回收时，weak具有安全性——指针将自动被设置为nil，避免野指针的出现</li>
+<li>_unsafe_unretained:<br>与weak类似，只是没有强引用指向对象时，_unsafe_unretained不会被置为nil；</li>
+<li>copy<br>建立一个索引计数为1的对象，然后释放旧对象。一般适用于存在可变对象的类型（例 NSString NSDictionary…）</li>
+<li>atomic<br>atomic意为操作是原子的，意味着只有一个线程访问实例变量.属性的存取方法是线程安全的,很少使用，因为比较影响效率，性能比nonatomic差。</li>
+<li>nonatomic<br>非原子的，可以被多个线程访问。它的效率比atomic快。禁止多线程，变量保护，提高性能，不能保证在多线程环境下的安全性，在单线程和明确只有一个线程访问的情况下广泛使用。</li>
+</ol>
+<p><strong>A. 什么情况使用 weak 关键字，相比 assign 有什么不同？</strong></p>
+<h5 id="什么情况使用-weak-关键字？"><a href="#什么情况使用-weak-关键字？" class="headerlink" title="什么情况使用 weak 关键字？"></a>什么情况使用 weak 关键字？</h5><p>在 ARC 中,在有可能出现循环引用的时候,往往要通过让其中一端使用 weak 来解决,比如: delegate 代理属性<br>自身已经对它进行一次强引用,没有必要再强引用一次,此时也会使用 weak,自定义 IBOutlet 控件属性一般也使用 weak；当然，也可以使用strong</p>
+<h5 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h5><p>weak 此特质表明该属性定义了一种“非拥有关系” (nonowning relationship)。为这种属性设置新值时，设置方法既不保留新值，也不释放旧值。此特质同assign类似， 然而在属性所指的对象遭到摧毁时，属性值也会清空(nil out)。 而 assign 的“设置方法”只会执行针对“纯量类型” (scalar type，例如 CGFloat 或 NSlnteger 等)的简单赋值操作。</p>
+<p>assign 可以用非 OC 对象,而 weak 必须用于 OC 对象</p>
+<p><strong>B. 怎么用 copy 关键字？</strong></p>
+<p>用途：</p>
+<p>NSString、NSArray、NSDictionary 等等经常使用copy关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary，他们之间可能进行赋值操作，为确保对象中的字符串值不会无意间变动，应该在设置新属性值时拷贝一份。<br>block 也经常使用 copy 关键字,block 使用 copy 是从 MRC 遗留下来的“传统”,在 MRC 中,方法内部的 block 是在栈区的,使用 copy 可以把它放到堆区.在 ARC 中写不写都行；</p>
+<blockquote>
+<p>copy 此特质所表达的所属关系与 strong 类似。然而设置方法并不保留新值，而是将其“拷贝” (copy)。 当属性类型为 NSString 时，经常用此特质来保护其封装性，因为传递给设置方法的新值有可能指向一个 NSMutableString 类的实例。这个类是 NSString 的子类，表示一种可修改其值的字符串，此时若是不拷贝字符串，那么设置完属性之后，字符串的值就可能会在对象不知情的情况下遭人更改。所以，这时就要拷贝一份“不可变” (immutable)的字符串，确保对象中的字符串值不会无意间变动。只要实现属性所用的对象是“可变的” (mutable)，就应该在设置新属性值时拷贝一份。</p>
+</blockquote>
+<p><strong>C.用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？</strong></p>
+<p>str1使用copy关键字 str2使用strong关键字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">-(void)test</div><div class="line">&#123;</div><div class="line">    NSMutableString*str=[NSMutableString stringWithFormat:@&quot;helloworld&quot;];</div><div class="line">    self.str1=str;</div><div class="line">    self.str2=str;</div><div class="line">    NSLog(@&quot;str:%p--%p&quot;,str,&amp;str);</div><div class="line">    NSLog(@&quot;copy_str:%p--%p&quot;,_str1,&amp;_str1);</div><div class="line">    NSLog(@&quot;strong_str:%p--%p&quot;,_str2,&amp;_str2);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2017-09-16 15:21:55.910 APP[1236:78490] str:0x600000075cc0--0x7fff5bd7c9d8</div><div class="line">2017-09-16 15:21:55.910 APP[1236:78490] copy_str:0x600000026e60--0x7fc66cc06358</div><div class="line">2017-09-16 15:21:55.911 APP[1236:78490] strong_str:0x600000075cc0--0x7fc66cc06360</div></pre></td></tr></table></figure>
+<p>经过copy关键字修饰过的str1没有因为str的变化而变化，经过strong修饰过的str2却随str的改变而改变。对于希望字符串的值不跟着str变化，使用用copy来设置string的属性。如果希望字串的值跟着赋值的字串的值变化，可以使用strong。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/yuweizhong/yu.github.io" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 YuWeizhong<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
