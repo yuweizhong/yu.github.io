@@ -218,8 +218,10 @@
 <li>_unsafe_unretained:<br>与weak类似，只是没有强引用指向对象时，_unsafe_unretained不会被置为nil；</li>
 <li>copy<br>建立一个索引计数为1的对象，然后释放旧对象。一般适用于存在可变对象的类型（例 NSString NSDictionary…）</li>
 <li>atomic<br>atomic意为操作是原子的，意味着只有一个线程访问实例变量.属性的存取方法是线程安全的,很少使用，因为比较影响效率，性能比nonatomic差。</li>
-<li>nonatomic<br>非原子的，可以被多个线程访问。它的效率比atomic快。禁止多线程，变量保护，提高性能，不能保证在多线程环境下的安全性，在单线程和明确只有一个线程访问的情况下广泛使用。</li>
+<li>nonatomic<br>非原子的，可以被多个线程访问。它的效率比atomic快。禁止多线程，变量保护，提高性能，不能保证在多线程环境下的安全性，在单线程和明确只有一个线程访问的情况下广泛使用。<br>8.@synthesize 和 @dynamic<br>@property 有两个对应的词，一个是 @synthesize，一个是 @dynamic。如果 @synthesize 和 @dynamic都没写，那么默认的就是 @syntheszie var = _var;<br>@synthesize ：如果你没有手动实现 setter 方法和 getter 方法，那么编译器会自动为你加上这两个方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@syntheszie var = _var;</div></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>@dynamic 告诉编译器：属性的 setter 与 getter 方法由用户自己实现，不自动生成。假如一个属性被声明为 @dynamic var，然后你没有提供 @setter 方法和 @getter 方法，编译的时候没问题，但是当程序运行到 instance.var = someVar，由于缺 setter 方法会导致程序崩溃；或者当运行到 someVar = var 时，由于缺 getter方法同样会导致崩溃。编译时没问题，运行时才执行相应的方法，这就是所谓的动态绑定。</p>
 <p><strong>A. 什么情况使用 weak 关键字，相比 assign 有什么不同？</strong></p>
 <h5 id="什么情况使用-weak-关键字？"><a href="#什么情况使用-weak-关键字？" class="headerlink" title="什么情况使用 weak 关键字？"></a>什么情况使用 weak 关键字？</h5><p>在 ARC 中,在有可能出现循环引用的时候,往往要通过让其中一端使用 weak 来解决,比如: delegate 代理属性<br>自身已经对它进行一次强引用,没有必要再强引用一次,此时也会使用 weak,自定义 IBOutlet 控件属性一般也使用 weak；当然，也可以使用strong</p>
 <h5 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h5><p>weak 此特质表明该属性定义了一种“非拥有关系” (nonowning relationship)。为这种属性设置新值时，设置方法既不保留新值，也不释放旧值。此特质同assign类似， 然而在属性所指的对象遭到摧毁时，属性值也会清空(nil out)。 而 assign 的“设置方法”只会执行针对“纯量类型” (scalar type，例如 CGFloat 或 NSlnteger 等)的简单赋值操作。</p>
@@ -233,6 +235,7 @@
 <p>运行结果</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2017-09-16 15:21:55.910 APP[1236:78490] str:0x600000075cc0--0x7fff5bd7c9d8</div><div class="line">2017-09-16 15:21:55.910 APP[1236:78490] copy_str:0x600000026e60--0x7fc66cc06358</div><div class="line">2017-09-16 15:21:55.911 APP[1236:78490] strong_str:0x600000075cc0--0x7fc66cc06360</div></pre></td></tr></table></figure>
 <p>经过copy关键字修饰过的str1没有因为str的变化而变化，经过strong修饰过的str2却随str的改变而改变。对于希望字符串的值不跟着str变化，使用用copy来设置string的属性。如果希望字串的值跟着赋值的字串的值变化，可以使用strong。</p>
+<p>**D.为什么不用assign修饰一个对象，而可以修饰基本数据类型？<br>assign修饰的对象（编译的时候会产生警告：Assigning retained object to unsafe property; object will be released after assignment）在释放之后，指针的地址还是存在的，并没有被置为nil，造成野指针。对象分配在堆上的某块内存，如果在后续的内存分配中，刚好分到了这块地址，程序就会crash。而基础数据类型是分配在栈上，栈的内存会由系统自己自动处理回收，不会造成野指针。</p>
 
 
                 
