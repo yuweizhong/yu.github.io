@@ -1,188 +1,157 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-<!-- Head tag -->
+<html class="full-height">
 <head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  
+  <title>&#39;const&amp;static&amp;extern&#39; | YuWeizhong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、const用于常量修饰    （1）const用来修饰右边的基本变量或指针变量    （2）被修饰的变量只读，不能被修改123456789int  const  *p   //  *p只读 ;p变量int  * const  p  // *p变量 ; p只读 const  int   * const p //p和*p都只读 int  const  * const  p   //p和*p都只读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;const&amp;static&amp;extern&#39;">
+<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/2017/09/15/const&static&extern/index.html">
+<meta property="og:site_name" content="YuWeizhong">
+<meta property="og:description" content="1、const用于常量修饰    （1）const用来修饰右边的基本变量或指针变量    （2）被修饰的变量只读，不能被修改123456789int  const  *p   //  *p只读 ;p变量int  * const  p  // *p变量 ; p只读 const  int   * const p //p和*p都只读 int  const  * const  p   //p和*p都只读">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-27T12:22:56.464Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&#39;const&amp;static&amp;extern&#39;">
+<meta name="twitter:description" content="1、const用于常量修饰    （1）const用来修饰右边的基本变量或指针变量    （2）被修饰的变量只读，不能被修改123456789int  const  *p   //  *p只读 ;p变量int  * const  p  // *p变量 ; p只读 const  int   * const p //p和*p都只读 int  const  * const  p   //p和*p都只读">
+  
+    <link rel="alternate" href="/atom.xml" title="YuWeizhong" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/yu.github.io/css/common.css">
+<link rel="stylesheet" href="/yu.github.io/css/nav.css">
+<link rel="stylesheet" href="/yu.github.io/css/layout.css">
+  
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
-    
-        <meta name="description" content="Personal Blog">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="YuWeizhong">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="&#39;const&amp;static&amp;extern&#39;"/>
-    
-
-    <!--Open Graph Description-->
-    
-        <meta property="og:description" content="Personal Blog" />
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="YuWeizhong"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-        <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>&#39;const&amp;static&amp;extern&#39; - YuWeizhong</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/yu.github.io/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
-
-    <!-- Google Analytics -->
-    
-
-
-    <!-- favicon -->
-    
-	
 </head>
 
-
 <body>
-
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/yu.github.io/">Configurable Title</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li>
-                        <a href="/yu.github.io/">
-                            
-                                Home
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/yu.github.io/archives">
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/yu.github.io/tags">
-                            
-                                Tags
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/yu.github.io/categories">
-                            
-                                Categories
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://github.com/yuweizhong/yu.github.io">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
-
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>'const&static&extern'</h1>
-                    
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        
-                            2017-09-15
-                        
-                    </span>
-                </div>
+  <header id="navbar" class="overflow-hidden">
+  <div class="container">
+    <nav class="nav">
+         <div class="nav-left">
+            <a href="/yu.github.io/" class="nav-item" style="font-size: 20px;">
+              <span class="logo">Diskobólos</span>'s Blog
+            </a>
+         </div>
+        <div class="nav-center is-hidden position-relative" id="search_container">
+            <div class="nav-item full-width full-height">
+                <i class="fa fa-search has-padding" aria-hidden="true"></i>
+                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
+                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
             </div>
+            <div id="search_result"></div>
         </div>
-    </div>
+        <div class="nav-right nav-menu">
+            <a class="nav-item" id="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="nav-item" href="/yu.github.io/">
+                Home
+            </a>
+            
+            <a class="nav-item" href="/yu.github.io/works">
+                My Works
+            </a>
+            
+            <a class="nav-item" href="/yu.github.io/about">
+                About
+            </a>
+            
+        </div>
+        <span class="nav-toggle" id="navMenuDropdown">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
+            
+            <a class="nav-item flex-1" href="/yu.github.io/">
+                Home
+            </a>
+            
+            <a class="nav-item flex-1" href="/yu.github.io/works">
+                My Works
+            </a>
+            
+            <a class="nav-item flex-1" href="/yu.github.io/about">
+                About
+            </a>
+            
+        </div>
+    </nav>
+  </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
+  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
+      <div class="main-inner-content">
+          <!--博文页面-->
 
-            <!-- Tags and categories -->
-           
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
+    }
 
-            <!-- Gallery -->
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
+    }
+
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
+    }
+</style>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>'const&static&extern'</strong>
+            </h1>
             
-
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="1、const"><a href="#1、const" class="headerlink" title="1、const"></a>1、const</h3><p>用于常量修饰<br>    （1）const用来修饰右边的基本变量或指针变量<br>    （2）被修饰的变量只读，不能被修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int  const  *p   //  *p只读 ;p变量</div><div class="line"></div><div class="line">int  * const  p  // *p变量 ; p只读</div><div class="line"></div><div class="line"> const  int   * const p //p和*p都只读</div><div class="line"></div><div class="line"> int  const  * const  p   //p和*p都只读 </div><div class="line"></div><div class="line"> NSString * const myStr = @&quot;myStrStr&quot;; //声明字符串的用法</div></pre></td></tr></table></figure></p>
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Diskobólos</span>
+                <span class="post-date sub-title">at: 2017-09-15</span>
+            </div>
+            
+                <div>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <h3 id="1、const"><a href="#1、const" class="headerlink" title="1、const"></a>1、const</h3><p>用于常量修饰<br>    （1）const用来修饰右边的基本变量或指针变量<br>    （2）被修饰的变量只读，不能被修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int  const  *p   //  *p只读 ;p变量</div><div class="line"></div><div class="line">int  * const  p  // *p变量 ; p只读</div><div class="line"></div><div class="line"> const  int   * const p //p和*p都只读</div><div class="line"></div><div class="line"> int  const  * const  p   //p和*p都只读 </div><div class="line"></div><div class="line"> NSString * const myStr = @&quot;myStrStr&quot;; //声明字符串的用法</div></pre></td></tr></table></figure></p>
 <h3 id="2、宏定义"><a href="#2、宏定义" class="headerlink" title="2、宏定义"></a>2、宏定义</h3><p>#define 预定义</p>
 <blockquote>
 <pre><code>在预处理时（编译前）进行文本替换，没有类型，不做任何类型检查
@@ -224,76 +193,71 @@ UIKIT_EXTERN NSString *const UIKeyboardWillHideNotification;
 
 UIKIT_EXTERN NSString *const UIKeyboardDidHideNotification;// UIKIT_EXTERN,是经过处理的extern
 </code></pre>
-
-                
-            </div>
-
-            <!-- Comments -->
+        </div>
+        <div class="post-reply">
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
 
+                            if (typeof LivereTower === 'function') { return; }
 
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
                 </div>
+                <!-- City版安装代码已完成 -->
+            
             
         </div>
     </div>
-</article>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
 
-    <!-- Footer -->
-    <hr />
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+      </div>
+  </div>
+  <style>
+  #footer {
+    min-height: 10vh;
+    background: black;
+    color: #fff;
+  }
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-
-                    
-
-                    
-                        <li>
-                            <a href="https://github.com/yuweizhong/yu.github.io" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
-
-                    
-
-                    
-
-                    
-                </ul>
-                <p class="copyright text-muted">&copy; 2018 YuWeizhong<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
-            </div>
-        </div>
+  #footer a {
+    color: #e1e1e1;
+  }
+</style>
+<footer id="footer" class="has-text-centered is-flex center">
+  <div class="container has-padding">
+    <div>
+      <div>
+        <!--请您保留作者署名, 主题制作来之不易-->
+        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
+        <br>
+        Copyright © YuWeizhong 2018
+        <br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
     </div>
+  </div>
 </footer>
 
-
-    <!-- After footer scripts -->
-    
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Disqus Comments -->
-
-
+<script src="/yu.github.io/js/search_core.js"></script>
+<script src="/yu.github.io/js/script.js"></script>
 
 </body>
-
 </html>
