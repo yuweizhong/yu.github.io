@@ -1,615 +1,678 @@
 <!DOCTYPE html>
-<html class="full-height">
+<html lang="en">
+
+<!-- Head tag -->
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  
-  <title>YuWeizhong</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="YuWeizhong">
-<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/index.html">
-<meta property="og:site_name" content="YuWeizhong">
-<meta property="og:description" content="Personal Blog">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YuWeizhong">
-<meta name="twitter:description" content="Personal Blog">
-  
-    <link rel="alternate" href="/atom.xml" title="YuWeizhong" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/yu.github.io/css/common.css">
-<link rel="stylesheet" href="/yu.github.io/css/nav.css">
-<link rel="stylesheet" href="/yu.github.io/css/layout.css">
-  
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Personal Blog">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="YuWeizhong">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="YuWeizhong"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Personal Blog" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="YuWeizhong"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>YuWeizhong</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/yu.github.io/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
 
 </head>
 
+
 <body>
-  <header id="navbar" class="overflow-hidden">
-  <div class="container">
-    <nav class="nav">
-         <div class="nav-left">
-            <a href="/yu.github.io/" class="nav-item" style="font-size: 20px;">
-              <span class="logo">Diskobólos</span>'s Blog
-            </a>
-         </div>
-        <div class="nav-center is-hidden position-relative" id="search_container">
-            <div class="nav-item full-width full-height">
-                <i class="fa fa-search has-padding" aria-hidden="true"></i>
-                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
-                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
-            </div>
-            <div id="search_result"></div>
-        </div>
-        <div class="nav-right nav-menu">
-            <a class="nav-item" id="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
             
-            <a class="nav-item" href="/yu.github.io/">
-                Home
-            </a>
+            <li class="menu-item">
+                <a href="/yu.github.io/">
+                    Home
+                </a>
+            </li>
             
-            <a class="nav-item" href="/yu.github.io/works">
-                My Works
-            </a>
+            <li class="menu-item">
+                <a href="/yu.github.io/archives">
+                    Archives
+                </a>
+            </li>
             
-            <a class="nav-item" href="/yu.github.io/about">
-                About
-            </a>
+            <li class="menu-item">
+                <a href="/yu.github.io/about.html">
+                    About
+                </a>
+            </li>
             
-        </div>
-        <span class="nav-toggle" id="navMenuDropdown">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
+            <li class="menu-item">
+                <a href="/yu.github.io/tags">
+                    Tags
+                </a>
+            </li>
             
-            <a class="nav-item flex-1" href="/yu.github.io/">
-                Home
-            </a>
+            <li class="menu-item">
+                <a href="/yu.github.io/categories">
+                    Categories
+                </a>
+            </li>
             
-            <a class="nav-item flex-1" href="/yu.github.io/works">
-                My Works
-            </a>
+            <li class="menu-item">
+                <a href="/yu.github.io/contact.html">
+                    Contact
+                </a>
+            </li>
             
-            <a class="nav-item flex-1" href="/yu.github.io/about">
-                About
-            </a>
-            
-        </div>
-    </nav>
-  </div>
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/yu.github.io/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">YuWeizhong</h1>
+        
+    </div>
 </header>
 
-  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
-      <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
-
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
-        background-size: cover;
-    }
-
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
-    }
-
-    .post-content-text {
-        color: #f1f1f1!important;
-    }
-
-    .primary-container .post-hover {
-        background: black;
-    }
-
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
-    }
-
-</style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
-                
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/yu.github.io/2017/10/18/iOS 遇见的UIWindow问题/">
-            <div class="full-height post-hover"
-                 style="
-                         background-image: url('');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            UIWindow遇到的问题
-                        </h1>
-                        <div>
-                        
-                            `
-                                <span class="tag is-post-tag">UIWindow</span>
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            最近项目里遇到了一个关于UIWindow的问题，便去查找了一下UIWIndow，故作此记录
-UIWindowLevelwindow层级主要有下面三类123UIKIT_EXTERN const UIWindowLevel UIWindow..
-                        </p>
-                        <p class="date text-shadow">2017-10-18</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
-            </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
+        <section class="main">
             
                 
-<a class="post-hover" href="/yu.github.io/2017/10/06/iOS @property/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/yu.github.io/2017/10/18/iOS 遇见的UIWindow问题/">
+                UIWindow遇到的问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-10-18</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>最近项目里遇到了一个关于UIWindow的问题，便去查找了一下UIWIndow，故作此记录</p>
+<p><strong>UIWindowLevel</strong><br>window层级主要有下面三类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal;</div><div class="line">UIKIT_EXTERN const UIWindowLevel UIWindowLevelAlert;</div><div class="line">UIKIT_EXTERN const UIWindowLevel UIWindowLevelStatusBar</div></pre></td></tr></table></figure></p>
+<p><strong>keyWindow</strong></p>
+<p>在ios 中用 [UIApplication sharedApplication].windows可以获取应用内所有设置的window：</p>
+<h5 id="1-UIWIndow"><a href="#1-UIWIndow" class="headerlink" title="(1)UIWIndow"></a>(1)UIWIndow</h5><p>程序主要的keyWindow，程序展示的窗口</p>
+<h5 id="2-UITextEffectsWindow"><a href="#2-UITextEffectsWindow" class="headerlink" title="(2)UITextEffectsWindow"></a>(2)UITextEffectsWindow</h5><p>这是iOS8引入的一个新window，是键盘所在的window。它的windowLevel是10，高于UIWindowLevelNormal。</p>
+<h5 id="3-UIRemoteKeyboardWindow"><a href="#3-UIRemoteKeyboardWindow" class="headerlink" title="(3)UIRemoteKeyboardWindow"></a>(3)UIRemoteKeyboardWindow</h5><p>iOS9之后,新增了一个类型为 UIRemoteKeyboardWindow 的窗口用来显示键盘按钮。</p>
+<p>当自定义添加window至页面上时（例如添加全局的悬浮窗口）每次弹窗 UIActionSheet或UIAlertView之后，再用[[UIApplication sharedApplication].keyWindow]获取keywindow时候，会取到最外层设置的UIWindow（项目中的全局悬浮窗口），就可能出现问题。</p>
+<p>因为在打开UIActionSheet或UIAlertView弹窗时候，程序为了让弹框出现在最外层，会新建一个临时的UIWindow，并且层级最高，并设置为keywindow。在弹框消失后keywindow会自动变成下一层级的UIWindow（当前层级最高的UIwindow），即指向了项目中的全局悬浮窗口。 </p>
+<p><strong>Add：使用iOS8后出现的UIAlertController不会出现上述问题</strong></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/yu.github.io/2017/10/06/iOS @property/">
                 iOS @property
-            </h3>
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-10-06</span>
             
             
-            <span class="tag is-post-tag">iOS property copy weak strong</span>
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                对于property，iOS开发者并不会陌生，无时无刻不在接触可是@property 的本质是什..
-            </p>
-            <p class="date text-shadow is-marginless">2017-10-06</p>
         </div>
     </div>
-</a>
-            
+
+    
+        <div class="content">
+            <p>对于property，iOS开发者并不会陌生，无时无刻不在接触可是<strong>@property 的本质是什么？</strong></p>
+<blockquote>
+<p>@property = ivar + getter + setter;</p>
+</blockquote>
+<p>“属性” (property)有两大概念：ivar（实例变量）、存取方法（access method ＝ getter + setter）<br>“属性” (property)作为 Objective-C 的一项特性，主要的作用就在于封装对象中的数据。 Objective-C 对象通常会把其所需要的数据保存为各种实例变量。实例变量一般通过“存取方法”(access method)来访问。其中，“获取方法” (getter)用于读取变量值，而“设置方法” (setter)用于写入变量值。这个概念已经定型，并且经由“属性”这一特性而成为 Objective-C 2.0 的一部分。<br>property在runtime中是objc_property_t定义如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">typedef struct objc_property *objc_property_t;</div></pre></td></tr></table></figure></p>
+<p>而objc_property是一个结构体，包括name和attributes，定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">struct property_t &#123;</div><div class="line">     const char *name;</div><div class="line">     const char *attributes;</div><div class="line"> &#125;;</div></pre></td></tr></table></figure></p>
+<p>而attributes本质是objc_property_attribute_t，定义了property的一些属性，定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/// Defines a property attribute</div><div class="line">typedef struct &#123;</div><div class="line">    const char *name;           /**&lt; The name of the attribute */</div><div class="line">    const char *value;          /**&lt; The value of the attribute (usually empty) */</div><div class="line">&#125; objc_property_attribute_t;</div></pre></td></tr></table></figure></p>
+<h4 id="property属性关键字"><a href="#property属性关键字" class="headerlink" title="@property属性关键字"></a>@property属性关键字</h4><ul>
+<li><p>nonatomic —原子性<br>在默认情况下，由编译器合成的方法会通过锁定机制确保其原子性(atomicity)。如果属性具备 nonatomic 特质，则不使用自旋锁。请注意，尽管没有名为“atomic”的特质(如果某属性不具备 nonatomic 特质，那它就是“原子的” ( atomic) )，但是仍然可以在属性特质中写明这一点，编译器不会报错。若是自己定义存取方法，那么就应该遵从与属性特质相符的原子性。</p>
+</li>
+<li><p>readwrite(读写)、readonly (只读) — 读/写权限</p>
+</li>
+<li><p>assign、strong、 weak、unsafe_unretained、copy — 内存管理语义</p>
+</li>
+</ul>
+<ol>
+<li>assign<br>简单赋值，不更改索引计数。 对基础数据类型 （例如NSInteger，CGFloat）和C数据类型（int, float, double, char, 等），适用简单数据类型。</li>
+<li>strong(强引用)<br>ARC下的一个关键字。被强引用指向的内存不会被释放。强引用会对引用计数+1，从而拓展对象的生命周期。（retain调用的ARC版本）</li>
+<li>weak弱引用：<br>弱引用是一种特殊的引用类型。它不会增加引用计数因而不会拓展对象的生命周期。当没有强引用指向对象时，弱引用会被置为nil。在对象回收时，weak具有安全性——指针将自动被设置为nil，避免野指针的出现</li>
+<li>_unsafe_unretained:<br>与weak类似，只是没有强引用指向对象时，_unsafe_unretained不会被置为nil；</li>
+<li>copy<br>建立一个索引计数为1的对象，然后释放旧对象。一般适用于存在可变对象的类型（例 NSString NSDictionary…）</li>
+<li>atomic<br>atomic意为操作是原子的，意味着只有一个线程访问实例变量.属性的存取方法是线程安全的,很少使用，因为比较影响效率，性能比nonatomic差。</li>
+<li>nonatomic<br>非原子的，可以被多个线程访问。它的效率比atomic快。禁止多线程，变量保护，提高性能，不能保证在多线程环境下的安全性，在单线程和明确只有一个线程访问的情况下广泛使用。<br>8.@synthesize 和 @dynamic<br>@property 有两个对应的词，一个是 @synthesize，一个是 @dynamic。如果 @synthesize 和 @dynamic都没写，那么默认的就是 @syntheszie var = _var;<br>@synthesize ：如果你没有手动实现 setter 方法和 getter 方法，那么编译器会自动为你加上这两个方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@syntheszie var = _var;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>@dynamic 告诉编译器：属性的 setter 与 getter 方法由用户自己实现，不自动生成。假如一个属性被声明为 @dynamic var，然后你没有提供 @setter 方法和 @getter 方法，编译的时候没问题，但是当程序运行到 instance.var = someVar，由于缺 setter 方法会导致程序崩溃；或者当运行到 someVar = var 时，由于缺 getter方法同样会导致崩溃。编译时没问题，运行时才执行相应的方法，这就是所谓的动态绑定。</p>
+<p><strong>A. 什么情况使用 weak 关键字，相比 assign 有什么不同？</strong></p>
+<h5 id="什么情况使用-weak-关键字？"><a href="#什么情况使用-weak-关键字？" class="headerlink" title="什么情况使用 weak 关键字？"></a>什么情况使用 weak 关键字？</h5><p>在 ARC 中,在有可能出现循环引用的时候,往往要通过让其中一端使用 weak 来解决,比如: delegate 代理属性<br>自身已经对它进行一次强引用,没有必要再强引用一次,此时也会使用 weak,自定义 IBOutlet 控件属性一般也使用 weak；当然，也可以使用strong</p>
+<h5 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h5><p>weak 此特质表明该属性定义了一种“非拥有关系” (nonowning relationship)。为这种属性设置新值时，设置方法既不保留新值，也不释放旧值。此特质同assign类似， 然而在属性所指的对象遭到摧毁时，属性值也会清空(nil out)。 而 assign 的“设置方法”只会执行针对“纯量类型” (scalar type，例如 CGFloat 或 NSlnteger 等)的简单赋值操作。</p>
+<p>assign 可以用非 OC 对象,而 weak 必须用于 OC 对象</p>
+<p><strong>B. 怎么用 copy 关键字？</strong></p>
+<p>用途：</p>
+<p>NSString、NSArray、NSDictionary 等等经常使用copy关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary，他们之间可能进行赋值操作，为确保对象中的字符串值不会无意间变动，应该在设置新属性值时拷贝一份。<br>block 也经常使用 copy 关键字,block 使用 copy 是从 MRC 遗留下来的“传统”,在 MRC 中,方法内部的 block 是在栈区的,使用 copy 可以把它放到堆区.在 ARC 中写不写都行；</p>
+<p>copy 此特质所表达的所属关系与 strong 类似。然而设置方法并不保留新值，而是将其“拷贝” (copy)。 当属性类型为 NSString 时，经常用此特质来保护其封装性，因为传递给设置方法的新值有可能指向一个 NSMutableString 类的实例。这个类是 NSString 的子类，表示一种可修改其值的字符串，此时若是不拷贝字符串，那么设置完属性之后，字符串的值就可能会在对象不知情的情况下遭人更改。所以，这时就要拷贝一份“不可变” (immutable)的字符串，确保对象中的字符串值不会无意间变动。只要实现属性所用的对象是“可变的” (mutable)，就应该在设置新属性值时拷贝一份。</p>
+<p><strong>C.用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？</strong></p>
+<p>str1使用copy关键字 str2使用strong关键字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">-(void)test</div><div class="line">&#123;</div><div class="line">    NSMutableString*str=[NSMutableString stringWithFormat:@&quot;helloworld&quot;];</div><div class="line">    self.str1=str;</div><div class="line">    self.str2=str;</div><div class="line">    NSLog(@&quot;str:%p--%p&quot;,str,&amp;str);</div><div class="line">    NSLog(@&quot;copy_str:%p--%p&quot;,_str1,&amp;_str1);</div><div class="line">    NSLog(@&quot;strong_str:%p--%p&quot;,_str2,&amp;_str2);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2017-09-16 15:21:55.910 APP[1236:78490] str:0x600000075cc0--0x7fff5bd7c9d8</div><div class="line">2017-09-16 15:21:55.910 APP[1236:78490] copy_str:0x600000026e60--0x7fc66cc06358</div><div class="line">2017-09-16 15:21:55.911 APP[1236:78490] strong_str:0x600000075cc0--0x7fc66cc06360</div></pre></td></tr></table></figure>
+<p>经过copy关键字修饰过的str1没有因为str的变化而变化，经过strong修饰过的str2却随str的改变而改变。对于希望字符串的值不跟着str变化，使用用copy来设置string的属性。如果希望字串的值跟着赋值的字串的值变化，可以使用strong。</p>
+<p>**D.为什么不用assign修饰一个对象，而可以修饰基本数据类型？<br>assign修饰的对象（编译的时候会产生警告：Assigning retained object to unsafe property; object will be released after assignment）在释放之后，指针的地址还是存在的，并没有被置为nil，造成野指针。对象分配在堆上的某块内存，如果在后续的内存分配中，刚好分到了这块地址，程序就会crash。而基础数据类型是分配在栈上，栈的内存会由系统自己自动处理回收，不会造成野指针。</p>
+
+        </div>
+    
+
+</div>
             
                 
-<a class="post-hover" href="/yu.github.io/2017/09/15/const&static&extern/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/yu.github.io/2017/09/15/const&static&extern/">
                 'const&static&extern'
-            </h3>
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-09-15</span>
             
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                1、const用于常量修饰    （1）const用来修饰右边的基本变量或指针变量    （2）..
-            </p>
-            <p class="date text-shadow is-marginless">2017-09-15</p>
-        </div>
-    </div>
-</a>
             
         </div>
     </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/yu.github.io/2017/10/06/iOS @property/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                iOS @property
-            </h3>
+
+    
+        <div class="content">
+            <h3 id="1、const"><a href="#1、const" class="headerlink" title="1、const"></a>1、const</h3><p>用于常量修饰<br>    （1）const用来修饰右边的基本变量或指针变量<br>    （2）被修饰的变量只读，不能被修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int  const  *p   //  *p只读 ;p变量</div><div class="line"></div><div class="line">int  * const  p  // *p变量 ; p只读</div><div class="line"></div><div class="line"> const  int   * const p //p和*p都只读</div><div class="line"></div><div class="line"> int  const  * const  p   //p和*p都只读 </div><div class="line"></div><div class="line"> NSString * const myStr = @&quot;myStrStr&quot;; //声明字符串的用法</div></pre></td></tr></table></figure></p>
+<h3 id="2、宏定义"><a href="#2、宏定义" class="headerlink" title="2、宏定义"></a>2、宏定义</h3><p>#define 预定义</p>
+<blockquote>
+<pre><code>在预处理时（编译前）进行文本替换，没有类型，不做任何类型检查
+
+能够定义一些函数方法等等，const做不到的
+
+大量的宏定义会导致编译时间长、二进制文件过大等等
+</code></pre></blockquote>
+<h3 id="3、static"><a href="#3、static" class="headerlink" title="3、static"></a>3、static</h3><p>静态变量修饰</p>
+<h4 id="修饰局部变量："><a href="#修饰局部变量：" class="headerlink" title="修饰局部变量："></a>修饰局部变量：</h4><blockquote>
+<pre><code>1.延长局部变量的生命周期,程序结束才会销毁。
+
+2.局部变量只会生成一份内存,只会初始化一次。
+
+3.改变局部变量的作用域。
+</code></pre></blockquote>
+<h4 id="修饰全局变量"><a href="#修饰全局变量" class="headerlink" title="修饰全局变量"></a>修饰全局变量</h4><blockquote>
+<pre><code>1.只能在本文件中访问,修改全局变量的作用域,生命周期不会改
+
+2.避免重复定义全局变量
+</code></pre></blockquote>
+<p>staic &amp;&amp; const联合使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 声明一个静态的全局只读常量（当前文件）</div><div class="line"> static NSString * const myStr = @&quot;myStrStr&quot;;</div></pre></td></tr></table></figure>
+<h3 id="4、extern"><a href="#4、extern" class="headerlink" title="4、extern"></a>4、extern</h3><blockquote>
+<pre><code>用来获取全局变量(包括全局静态变量)的值，不能用于定义变量，定义和分配内存都在原来类中。
+
+会在当前文件中先查找是否有改变量，其次再去全局查找
+</code></pre></blockquote>
+<p>extern &amp;&amp; const联合使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//全局共享的变量</div><div class="line">A.h</div><div class="line">NSString * const myStr = @&quot;myStrStr&quot;;</div><div class="line">B.h</div><div class="line">extern NSString * const myStr;</div></pre></td></tr></table></figure>
+<h3 id="5、UIKIT-EXTERN"><a href="#5、UIKIT-EXTERN" class="headerlink" title="5、UIKIT_EXTERN"></a>5、UIKIT_EXTERN</h3><p>如果多个.m文件需要用到同一个变量的情况，在pch文件中写上面这行代码,就相当于为每一个.m文件都写这行代码</p>
+<pre><code>//例：苹果 系统预置的通知
+
+UIKIT_EXTERN NSString *const UIKeyboardWillShowNotification;
+
+UIKIT_EXTERN NSString *const UIKeyboardDidShowNotification;
+
+UIKIT_EXTERN NSString *const UIKeyboardWillHideNotification;
+
+UIKIT_EXTERN NSString *const UIKeyboardDidHideNotification;// UIKIT_EXTERN,是经过处理的extern
+</code></pre>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/yu.github.io/2017/09/02/iOS加密和苹果证书/">
+                iOS加密和苹果证书
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-09-02</span>
             
             
-            <span class="tag is-post-tag">iOS property copy weak strong</span>
             
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                对于property，iOS开发者并不会陌生，无时无刻不在接触可是@property 的本质是什..
-            </p>
-            <p class="date text-shadow is-marginless">2017-10-06</p>
         </div>
     </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/yu.github.io/2017/09/15/const&static&extern/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                'const&static&extern'
-            </h3>
+
+    
+        <div class="content">
+            <h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><ul>
+<li><p>base_64加密:最常见的用于传输8位字节代码的编码方式之一。更多的感觉Base_64是作为一个字符编码方式，而不是一个加密算法，用GTMBase64三方库</p>
+</li>
+<li><p>MD5加密:Message-Digest Algorithm 5，严格来说是一种摘要算法，MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处理后，算法的输出由四个32位分组组成，将这四个32位分组级联后将生成一个128位散列值</p>
+</li>
+<li><p>DES加密:Data Encryption Standard：对称算法，数据加密标准，速度较快，适用于加密大量数据的场合；</p>
+</li>
+<li><p>HMAC加密算法：依赖于CommonCryptor库.主要应用于身份验证，为了防止匿名攻击，服务器需要确保每个请求都是从被信任的客户端发起的</p>
+<h6 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h6><ol>
+<li>客户端发出登录请求</li>
+<li>服务器返回一个随机值（key），在会话记录中保存这个随机值</li>
+<li>客户端将该随机值作为密钥，用户密码进行 hmac 运算，递交给服务器</li>
+<li>服务器读取数据库中的用户密码，利用密钥做和客户端一样的hmac运算，然后与用户发送的结果比较，如果一致，则用户身份合法。</li>
+</ol>
+</li>
+<li><p>RSA加密:非对称加密算法，加密的密钥和解密的秘钥不相同；</p>
+<pre><code>公钥，可以对外给任何人的加密和解密密码，公开的，可以任何人访问
+私钥，私钥是一定要严格保护的，通过私钥可以生成公钥，但是从公钥可以认为是永远无法推导出私钥的
+</code></pre><h6 id="RSA加密主要包含-密钥生成算法、加密算法和解密算法三部"><a href="#RSA加密主要包含-密钥生成算法、加密算法和解密算法三部" class="headerlink" title="RSA加密主要包含 密钥生成算法、加密算法和解密算法三部"></a>RSA加密主要包含 密钥生成算法、加密算法和解密算法三部</h6><pre><code>1.  通过密钥生成算法生成公钥(Public Key)和私钥(Primary Key)，公钥一般公开给客户端，私钥由服务器保留
+2.  客户端通过公钥进行加密，传给服务端
+3.  服务端收到客户端数据包之后用私钥解密得到对应数据
+</code></pre><h6 id="RSA签名（认证）主要包含-密钥生成算法、签名算法和验证算法"><a href="#RSA签名（认证）主要包含-密钥生成算法、签名算法和验证算法" class="headerlink" title="RSA签名（认证）主要包含 密钥生成算法、签名算法和验证算法"></a>RSA签名（认证）主要包含 密钥生成算法、签名算法和验证算法</h6><pre><code>1.  通RSA加密相同的生成公钥(Public Key)和私钥(Primary Key)
+2.  通过私钥和数据包（一般为文件）进行加密,实现对文件的签名
+3.  将数据包（文件）通过公钥解密，验证签名
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="苹果证书"><a href="#苹果证书" class="headerlink" title="苹果证书"></a>苹果证书</h3><h4 id="证书类型"><a href="#证书类型" class="headerlink" title="证书类型"></a>证书类型</h4><ul>
+<li style="list-style: none"><input type="checkbox"> 开发证书:一般为99证书，开发真机调试用</li>
+<li style="list-style: none"><input type="checkbox"> 发布证书：app发布到appstore时候打包使用</li>
+<li style="list-style: none"><input type="checkbox"> 推送证书：ConnectCenter创建推送证书，注册推送功能</li>
+<li style="list-style: none"><input type="checkbox"> 企业证书：299证书，不需要发布到appstore，打包信任后即可安装</li>
+</ul>
+<h4 id="证书申请使用"><a href="#证书申请使用" class="headerlink" title="证书申请使用"></a>证书申请使用</h4><ol>
+<li>开发者使用Mac电脑像CA机构创建证书申请，本地会生成csr文件，同时秘钥保存在本地（后续打发布的包用于Xcode验证）</li>
+<li>开发者在ConnectCenter上传csr文件申请证书，并下载到本地，双击打开后从钥匙串生成.p12文件可用于其他设备打包发布</li>
+<li>生成成provisioning profile时选择对应的证书，然后下载安装相应的provisioning文件（称描述文件），描述文件包含公钥、设备信息、开发者信息、过期信息等等；</li>
+<li>在程序打包时，会用私钥就代码进行加密，然后把provisioning文件包含到app文件中。当iOS设备安装应用时，首先用CA的公钥解密出开发者的公钥，然后再用开发者的公钥解密出代码，完成安装</li>
+</ol>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/yu.github.io/2017/08/26/iOS开发之状态栏导航栏/">
+                iOS开发之状态栏导航栏
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-08-26</span>
             
             
             
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                1、const用于常量修饰    （1）const用来修饰右边的基本变量或指针变量    （2）..
-            </p>
-            <p class="date text-shadow is-marginless">2017-09-15</p>
         </div>
     </div>
-</a>
-        
+
+    
+        <div class="content">
+            <h1 id="iOS开发之状态栏导航栏"><a href="#iOS开发之状态栏导航栏" class="headerlink" title="iOS开发之状态栏导航栏"></a><strong>iOS开发之状态栏导航栏</strong></h1><hr>
+<h1 id="​状态栏"><a href="#​状态栏" class="headerlink" title="​状态栏"></a><code>​</code>状态栏</h1><h2 id="全局设置"><a href="#全局设置" class="headerlink" title="全局设置"></a>全局设置</h2><p>将info.plist文件的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Viewcontroller-based status bar ppearance</div></pre></td></tr></table></figure></p>
+<p>设置为NO，即可开启全局设置，也就是说你在VC中对状态栏的控制都将无效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//设置状态栏的字体颜色模式</div><div class="line">&gt; [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];</div><div class="line">//设置状态栏是否隐藏</div><div class="line">[[UIApplication sharedApplication] setStatusBarHidden:YES];</div><div class="line">UIStatusBarStyleDefault和UIStatusBarStyleLightContent，前者是默认的黑色，而后者是白色。</div></pre></td></tr></table></figure></p>
+<h2 id="分页面设置"><a href="#分页面设置" class="headerlink" title="分页面设置"></a>分页面设置</h2><p>将info.plist文件的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Viewcontroller-based status bar ppearance</div></pre></td></tr></table></figure></p>
+<p>设置为YES，即可开启由VC来控制状态栏的功能，在这种模式下，全局的设置将无效！！所以我们必须逐个页面对状态栏进行设置，否则状态栏将维持默认的黑色字体和默认为显示状态。<br>1) 当VC不在UINavigationController中时，在VC中添加一个方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (UIStatusBarStyle)preferredStatusBarStyle</div><div class="line">&#123;</div><div class="line"> //返回白色</div><div class="line"> return UIStatusBarStyleLightContent;</div><div class="line"> //返回黑色</div><div class="line"> //return UIStatusBarStyleDefault;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>保险起见，在view的某个加载阶段比如viewWillAppear中，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[self setNeedsStatusBarAppearanceUpdate];</div></pre></td></tr></table></figure></p>
+<p>2) 当VC在UINavigationController中时，VC并不能通过1)的方式控制状态栏的颜色，详见本文后面的参考资料，那么这个时候，有一个trick的方法可以在VC中间接的控制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">self.navigationController.navigationBar.barStyle = UIBarStyleBlack;</div></pre></td></tr></table></figure></p>
+<h1 id="导航栏"><a href="#导航栏" class="headerlink" title="##导航栏"></a>##导航栏</h1><p>导航栏背景控制 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];</div></pre></td></tr></table></figure></p>
+<p>导航栏背景图片 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@ &quot;nav_bg.png&quot; ]  forBarMetrics:UIBarMetricsDefault]; （图片64px覆盖状态栏）</div></pre></td></tr></table></figure>
+<p>导航栏标题设置 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">NSShadow *shadow = [[NSShadow alloc] init]; </div><div class="line"> shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8]; </div><div class="line"> shadow.shadowOffset = CGSizeMake(0, 1); </div><div class="line"> [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: </div><div class="line"> [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName, </div><div class="line"> shadow, NSShadowAttributeName, </div><div class="line"> [UIFont fontWithName:@ &quot;HelveticaNeue-CondensedBlack&quot; size:21.0], NSFontAttributeName, nil]];</div></pre></td></tr></table></figure></p>
+<p>导航栏按钮颜色设置 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];</div></pre></td></tr></table></figure></p>
+<p>导航栏下控件定位 ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">self.automaticallyAdjustsScrollViewInsets =NO;（scrollView布局设置）</div><div class="line">if (on) &#123; (控件自动下移64)</div><div class="line"></div><div class="line"> self.edgesForExtendedLayout = UIRectEdgeNone;</div><div class="line"></div><div class="line"> &#125;else&#123;</div><div class="line"></div><div class="line"> self.edgesForExtendedLayout = UIRectEdgeAll;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>导航栏图标左移<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//创建UIBarButtonSystemItemFixedSpace</div><div class="line">UIBarButtonItem * spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];</div><div class="line">//将宽度设为负值</div><div class="line">spaceItem.width = -15;</div><div class="line">//将两个BarButtonItem都返回给NavigationItem</div><div class="line">self.navigationItem.leftBarButtonItems = @[spaceItem,leftBarBtn];</div></pre></td></tr></table></figure></p>
+<p>全屏滑动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">id target = self.interactivePopGestureRecognizer.delegate;</div><div class="line">// 创建全屏滑动手势，调用系统自带滑动手势的target的action方法</div><div class="line"> UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];</div><div class="line"> // 设置手势代理，拦截手势触发</div><div class="line">pan.delegate = self;</div><div class="line">// 给导航控制器的view添加全屏滑动手势</div><div class="line">  [self.view addGestureRecognizer:pan];</div><div class="line"> // 禁止使用系统自带的滑动手势</div><div class="line">self.interactivePopGestureRecognizer.enabled = NO;</div></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/yu.github.io/2017/08/21/FirstBlog/">
+                First Blog
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-08-21</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="hexo-GitHub"><a href="#hexo-GitHub" class="headerlink" title="hexo+GitHub"></a><strong>hexo+GitHub</strong></h1><p> 很早就有写博客这个想法，希望有一个个人的独立博客，最后采用了hexo+github的方式建立了这个个人博客。</p>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p>hexo是一款基于Node.js的静态博客框架，和jekyll相似，鉴于hexo以下优点，最后，使用了hexo作为博客框架</p>
+<ol>
+<li>依赖少（仅依赖node），易于安装</li>
+<li>台湾人写的，不用担心对中文支持不好</li>
+<li>对程序员友好，要是愿意折腾还是有的折腾的</li>
+</ol>
+<h2 id="构建博客步骤"><a href="#构建博客步骤" class="headerlink" title="构建博客步骤"></a>构建博客步骤</h2><ul>
+<li>安装Git Bash</li>
+<li>安装node.js<br>++（傻瓜式安装不多做解释）++</li>
+<li>创建文件夹作仓库（例如blog目录）进入到该目录 </li>
+<li>安装hexo： npm i -g hexo </li>
+<li>初始化：hexo init<h3 id="生成目录"><a href="#生成目录" class="headerlink" title="生成目录"></a>生成目录</h3></li>
+<li style="list-style: none"><input type="checkbox"> node_modules：是依赖包</li>
+<li style="list-style: none"><input type="checkbox"> public：存放的是生成的页面</li>
+<li style="list-style: none"><input type="checkbox"> scaffolds：命令生成文章等的模板</li>
+<li style="list-style: none"><input type="checkbox"> source：用命令创建的各种文章</li>
+<li style="list-style: none"><input type="checkbox"> themes：主题</li>
+<li style="list-style: none"><input type="checkbox"> _config.yml：整个博客的配置</li>
+<li style="list-style: none"><input type="checkbox"> db.json：source解析所得到的</li>
+<li style="list-style: none"><input type="checkbox"> package.json：项目所需模块项目的配置信息</li>
+</ul>
+<h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><ul>
+<li>注册github账号（已注册的忽略）</li>
+<li>创建一个repo，名称为yourname.github.io, 其中yourname是你的github名称 </li>
+<li>创建完之后，用编辑器打开你的blog项目，修改_config.yml文件最后的一些配置(冒号之后都是有一个半角空格的)<br>deploy:<br>type: git<br>repo: <a href="https://github.com/YourgithubName/YourgithubName.github.io.git" target="_blank" rel="external">https://github.com/YourgithubName/YourgithubName.github.io.git</a><br>branch: master</li>
+<li>回到gitbash中，进入你的blog目录，分别执行以下命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>打开浏览器输入：<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 可以查看到博客主页</p>
+<h2 id="上传github"><a href="#上传github" class="headerlink" title="上传github"></a>上传github</h2><ul>
+<li><p>先安装一波：npm install hexo-deployer-git–save（这样才能将你写好的文章部署到github服务器上并让别人浏览到）</p>
+</li>
+<li><p>执行命令(建议每次都按照如下步骤部署)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在浏览器中输入 <a href="http://yourgithubname.github.io" target="_blank" rel="external">http://yourgithubname.github.io</a> 就可以看到你的个人博客啦</p>
+<h3 id="修改博客主页主题"><a href="#修改博客主页主题" class="headerlink" title="修改博客主页主题"></a>修改博客主页主题</h3><p>网址<a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a><br>github上clone到themes里面更改config配置后即可生效</p>
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &apos;文章名&apos;</div></pre></td></tr></table></figure>
+<p>然后你就可以在source/_posts路径下看到你创建的文章啦，编辑完成之后按照前面说的方式部署，在浏览器刷新就能看到你的文章了。至于markdown，可以自行发挥！！！</p>
+<hr>
+<p>可以说，2017年是特殊的一年，从学校步入到了社会，在近两年iOS形势大败之下能够成功入职了某大型互联网金融公司，现在看来也是不错的。当然，在仔细品味大神的博客之后，对博客也萌生了更多的想法，在这后博客时代，博客是一个单纯美好的平台，一个分享、记录的平台。动笔写博客主要是想能够充实自己</p>
+<ol>
+<li>积累==积累一些实在的东西，踏实的继续走下去</li>
+<li>坚持==坚持撰写博客，不断激励自己，不断进步</li>
+<li>分享==分享一些自己学习到的技术和知识</li>
+<li>记录==记录技术道路上的点滴<h4 id="我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！"><a href="#我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！" class="headerlink" title="我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！"></a>我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！</h4></li>
+</ol>
+
+        </div>
+    
+
+</div>
+            
+        </section>
     </div>
 </div>
 
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/yu.github.io/2017/10/06/iOS @property/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>iOS @property</h3>
-                                        
-                                        <p>
-                                            
-                                                <span class="tag is-post-tag">iOS property copy weak strong</span>
-                                            
-                                        </p>
-                                        <p>
-                                            对于property，iOS开发者并不会陌生，无时无刻不在接触可是@property 的本质是什么？
 
-@property = ivar + getter + setter;
 
-“属性” (property)有两大概念：ivar（实例变量）、存取方法（access method ＝ getter + setter）“属性” (property)作为 Ob..
-                                        </p>
-                                        <p>2017-10-06</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/yu.github.io/2017/09/15/const&amp;static&amp;extern/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>&#39;const&amp;static&amp;extern&#39;</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            1、const用于常量修饰    （1）const用来修饰右边的基本变量或指针变量    （2）被修饰的变量只读，不能被修改123456789int  const  *p   //  *p只读 ;p变量int  * const  p  // *p变量 ; p只读 const  int   * const p //p和*p都只读 int  const  *..
-                                        </p>
-                                        <p>2017-09-15</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/yu.github.io/2017/09/02/iOS加密和苹果证书/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>iOS加密和苹果证书</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            加密算法
-base_64加密:最常见的用于传输8位字节代码的编码方式之一。更多的感觉Base_64是作为一个字符编码方式，而不是一个加密算法，用GTMBase64三方库
 
-MD5加密:Message-Digest Algorithm 5，严格来说是一种摘要算法，MD5以512位分组来处理输入的信息，且每一分组又被划分为16个32位子分组，经过了一系列的处..
-                                        </p>
-                                        <p>2017-09-02</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/yu.github.io/2017/08/26/iOS开发之状态栏导航栏/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>iOS开发之状态栏导航栏</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            iOS开发之状态栏导航栏
-​状态栏全局设置将info.plist文件的1Viewcontroller-based status bar ppearance
-设置为NO，即可开启全局设置，也就是说你在VC中对状态栏的控制都将无效12345//设置状态栏的字体颜色模式&gt; [[UIApplication sharedApplication] setSta..
-                                        </p>
-                                        <p>2017-08-26</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/yu.github.io/2017/08/21/FirstBlog/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>First Blog</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            hexo+GitHub 很早就有写博客这个想法，希望有一个个人的独立博客，最后采用了hexo+github的方式建立了这个个人博客。
-hexohexo是一款基于Node.js的静态博客框架，和jekyll相似，鉴于hexo以下优点，最后，使用了hexo作为博客框架
 
-依赖少（仅依赖node），易于安装
-台湾人写的，不用担心对中文支持不好
-对程序员友好，要..
-                                        </p>
-                                        <p>2017-08-21</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                        
-                        
-                    
-                </nav>
-            </section>
-            
-                <style>
-    /*user info start*/
-    .user-info {
-        padding: 15px 0 0;
-    }
 
-    .user-info .avatar {
-        width: 155px;
-        height: 155px;
-        border-radius: 50%;
-    }
+</div>
 
-    .sns-container {
-        flex-wrap: wrap;
-    }
+<!-- Footer -->
+<div class="push"></div>
 
-    .sns-container a{
-        color: black;
-    }
-    /*user info end*/
-
-    /*Tag start*/
-    #tag_cloud .tags-item{
-        display: inline-block;
-        color: #000;
-        border: 1px solid gray;
-
-        margin: 4px 2px;
-        padding: 0 4px;
-        border-radius: 6px;
-    }
-    /*Tag end*/
-
-    /*Site box start*/
-    .site-box {
-        height: 60px;
-    }
-    /*Site box end*/
-
-    .category-list-item,
-    .archive-list-item {
-        display: flex;
-        margin-bottom: 4px;
-        justify-content: space-between;
-    }
-    .category-list-link,
-    .archive-list-link {
-        color: black;
-    }
-
-    .category-list-count,
-    .archive-list-count {
-        width: 32px;
-        text-align: center;
-        border-radius: 4px;
-        color: #fff;
-        background-color: gray;
-    }
-</style>
-<aside class="column is-hidden-touch is-3" style="max-width: 280px; min-width: 230px">
-    <div class="content-box user-info">
-        <div class="has-padding">
-            <header class="has-text-centered">
-                <img class="avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
-            </header>
-            <section class="has-text-centered">
-                <h3><strong>Diskobólos</strong></h3>
-                <p class="sub-title">A Touch Of Zen</p>
-                
-                <p class="is-flex center" style=" color: gray">
-                    <i class="fa fa-map-marker" style="padding: 5px"></i>
-                    Earth
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
                 </p>
-                
-            </section>
-        </div>
-        <div class="top-line">
-            <ul class="sns-container justify-center is-flex has-padding">
-                
-
-                
-                <li>
-                    <a target="_blank" href="https://twitter.com/ehazon">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                        </span>
-                    </a>
-                </li>
-                
-
-                
-                <li>
-                    <a target="_blank" href="https://www.zhihu.com/people/margretz">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                    </a>
-                </li>
-                
-
-                
-
-                
-
-                
-                <li>
-                    <a target="_blank" href="https://github.com/haojen">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                    </a>
-                </li>
-                
-
-                
-            </ul>
-        </div>
-    </div>
-    <div class="content-box">
-        <!--post数量和tag category 数量-->
-        <div class="site-box is-flex">
-            <div class="flex-1 is-flex flex-column center full-height right-line">
-                <strong>6</strong>
-                <p>Posts</p>
             </div>
-            <div class="flex-1 is-flex flex-column center full-height">
-                <strong>2</strong>
-                <p>Tags</p>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/yu.github.io/2017/10/18/iOS 遇见的UIWindow问题/">UIWindow遇到的问题</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/yu.github.io/2017/10/06/iOS @property/">iOS @property</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/yu.github.io/2017/09/15/const&static&extern/">&#39;const&amp;static&amp;extern&#39;</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/yu.github.io/2017/09/02/iOS加密和苹果证书/">iOS加密和苹果证书</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
             </div>
         </div>
     </div>
-    <div id='tag_cloud' class="content-inner content-box">
-        <div class="has-text-centered">
-            <strong>Tags</strong>
-        </div>
-        <div class="content-inner is-flex flex-wrap justify-space-between">
-            
-                <a class="tags-item" href="tags/iOS-property-copy-weak-strong/" title="iOS property copy weak strong" rel="1">
-                    iOS property copy weak strong
-                </a>
-            
-                <a class="tags-item" href="tags/UIWindow/" title="UIWindow" rel="1">
-                    UIWindow
-                </a>
-            
-        </div>
-    </div>
-    <div class="content-inner content-box">
-        <div class="has-text-centered">
-            <strong>Categories</strong>
-        </div>
-        <div class="content-inner">
-            
-        </div>
-    </div>
-    <div class="content-inner content-box">
-        <div class="has-text-centered">
-            <strong>Archives</strong>
-        </div>
-        <div class="content-inner">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/yu.github.io/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/yu.github.io/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/yu.github.io/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li></ul>
-        </div>
-    </div>
-</aside>
-            
-        </div>
-    </div>
-</div>
-
-      </div>
-  </div>
-  <style>
-  #footer {
-    min-height: 10vh;
-    background: black;
-    color: #fff;
-  }
-
-  #footer a {
-    color: #e1e1e1;
-  }
-</style>
-<footer id="footer" class="has-text-centered is-flex center">
-  <div class="container has-padding">
-    <div>
-      <div>
-        <!--请您保留作者署名, 主题制作来之不易-->
-        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
-        <br>
-        Copyright © YuWeizhong 2018
-        <br>
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-      </div>
-    </div>
-  </div>
 </footer>
 
-<script src="/yu.github.io/js/search_core.js"></script>
-<script src="/yu.github.io/js/script.js"></script>
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/yu.github.io/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
 
 </body>
+
 </html>
