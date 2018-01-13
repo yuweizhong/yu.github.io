@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="full-height">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  
+  <title>OC Basis | YuWeizhong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、Objective-C动态时特性OC语言动态时的特性主要表现在：动态类型、动态绑定、动态加载。  动态类型，区分于静态类型（int、float…），静态类型在编译时决定变量类型，类型不符合就会报错。动态类型即在运行时决定变量类型，OC中的id类型，任何对象都可以被id类型指针所指，到运行时才决定对象的类型。  动态绑定，基于动态类型，在某个实例对象被确定之后，其属性和方法也就被确定了。OC中的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OC Basis">
+<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/2017/11/03/OC Basis/index.html">
+<meta property="og:site_name" content="YuWeizhong">
+<meta property="og:description" content="1、Objective-C动态时特性OC语言动态时的特性主要表现在：动态类型、动态绑定、动态加载。  动态类型，区分于静态类型（int、float…），静态类型在编译时决定变量类型，类型不符合就会报错。动态类型即在运行时决定变量类型，OC中的id类型，任何对象都可以被id类型指针所指，到运行时才决定对象的类型。  动态绑定，基于动态类型，在某个实例对象被确定之后，其属性和方法也就被确定了。OC中的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-13T02:59:25.307Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OC Basis">
+<meta name="twitter:description" content="1、Objective-C动态时特性OC语言动态时的特性主要表现在：动态类型、动态绑定、动态加载。  动态类型，区分于静态类型（int、float…），静态类型在编译时决定变量类型，类型不符合就会报错。动态类型即在运行时决定变量类型，OC中的id类型，任何对象都可以被id类型指针所指，到运行时才决定对象的类型。  动态绑定，基于动态类型，在某个实例对象被确定之后，其属性和方法也就被确定了。OC中的">
+  
+    <link rel="alternate" href="/atom.xml" title="YuWeizhong" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/yu.github.io/css/common.css">
+<link rel="stylesheet" href="/yu.github.io/css/nav.css">
+<link rel="stylesheet" href="/yu.github.io/css/layout.css">
+  
+
+</head>
+
+<body>
+  <header id="navbar" class="overflow-hidden">
+  <div class="container">
+    <nav class="nav">
+         <div class="nav-left">
+            <a href="/yu.github.io/" class="nav-item" style="font-size: 20px;">
+              <span class="logo">Diskobólos</span>'s Blog
+            </a>
+         </div>
+        <div class="nav-center is-hidden position-relative" id="search_container">
+            <div class="nav-item full-width full-height">
+                <i class="fa fa-search has-padding" aria-hidden="true"></i>
+                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
+                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div id="search_result"></div>
+        </div>
+        <div class="nav-right nav-menu">
+            <a class="nav-item" id="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="nav-item" href="/yu.github.io/">
+                Home
+            </a>
+            
+            <a class="nav-item" href="/yu.github.io/works">
+                My Works
+            </a>
+            
+            <a class="nav-item" href="/yu.github.io/about">
+                About
+            </a>
+            
+        </div>
+        <span class="nav-toggle" id="navMenuDropdown">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
+            
+            <a class="nav-item flex-1" href="/yu.github.io/">
+                Home
+            </a>
+            
+            <a class="nav-item flex-1" href="/yu.github.io/works">
+                My Works
+            </a>
+            
+            <a class="nav-item flex-1" href="/yu.github.io/about">
+                About
+            </a>
+            
+        </div>
+    </nav>
+  </div>
+</header>
+
+  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
+      <div class="main-inner-content">
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
+    }
+
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
+    }
+
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
+    }
+</style>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>OC Basis</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Diskobólos</span>
+                <span class="post-date sub-title">at: 2017-11-03</span>
+            </div>
+            
+                <div>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <h3 id="1、Objective-C动态时特性"><a href="#1、Objective-C动态时特性" class="headerlink" title="1、Objective-C动态时特性"></a>1、Objective-C动态时特性</h3><pre><code>OC语言动态时的特性主要表现在：动态类型、动态绑定、动态加载。
+</code></pre><ul>
+<li><p>动态类型，区分于静态类型（int、float…），静态类型在编译时决定变量类型，类型不符合就会报错。动态类型即在运行时决定变量类型，OC中的id类型，任何对象都可以被id类型指针所指，到运行时才决定对象的类型。</p>
+</li>
+<li><p>动态绑定，基于动态类型，在某个实例对象被确定之后，其属性和方法也就被确定了。OC中的方法都是消息转发机制，当我们向一个对象发送息发送-respondsToSelector:或者 -instancesRespondToSelector:等来确定对象是否可以对某个方法做出响应时，在消息转发机制处理之前，对应的类 的+resolveClassMethod:和+resolveInstanceMethod:将会被调用，可以有机会动态地向类或者实例添加新的方法（避免崩溃），也即类的实现是可以动态绑定；isKindOfClass类似。</p>
+</li>
+<li><p>动态加载，主要是icon图片的加载会根据设备状态自动选取@2x @3x图片进行显示。</p>
+</li>
+</ul>
+<h3 id="2、delegate、datasource-amp-block"><a href="#2、delegate、datasource-amp-block" class="headerlink" title="2、delegate、datasource&amp;block"></a>2、delegate、datasource&amp;block</h3><ul>
+<li>delegate是委托回调，在OC中是一个类委托另一个类实现某个方法，一个对象会对他的delegate发送消息，执行delegate里的方法</li>
+<li>datasource是数据源，主要和数据内容有关，一般为cell的属性和各种构造函数，是对数据源的处理。</li>
+<li>block是简单的回调，相比delegate代码更加集中统一，写法更加简练，但要注意循环引用。在公共接口和方法较多情况下可以选择delegate，在异步回调（AFNetWorking…）或者简单的回调选择block，block涉及到栈内存和堆内存的拷贝，运行成本较大；而delegate只是一个对象指针的保存和回调。</li>
+</ul>
+<h3 id="3、让对象实现copy功能"><a href="#3、让对象实现copy功能" class="headerlink" title="3、让对象实现copy功能"></a>3、让对象实现copy功能</h3><p>实现copy功能，则需实现 NSCopying 协议。如果自定义的对象分为可变版本与不可变版本，那么就要同时实现 NSCopying与 NSMutableCopying协议。<br>声明 NSCopying 协议<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;NSCopying&gt;</div></pre></td></tr></table></figure></p>
+<p>实现 NSCopying 协议<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (id)copyWithZone:(NSZone *)zone;</div></pre></td></tr></table></figure></p>
+<h3 id="4、深拷贝-amp-浅拷贝"><a href="#4、深拷贝-amp-浅拷贝" class="headerlink" title="4、深拷贝&amp;浅拷贝"></a>4、深拷贝&amp;浅拷贝</h3><ul>
+<li><p>浅拷贝：指针拷贝，内存地址并未改变，只是将对象内存地址多了一个引用，在拷贝结束之后，两个对象的值不仅相同，而且对象所指的内存地址都是一样的。</p>
+</li>
+<li><p>深拷贝：内容拷贝，拷贝一个对象的具体内容，拷贝结束之后，两个对象的值虽然是相同的，但是指向的内存地址是不同的。两个对象之间也互不影响，互不干扰。</p>
+</li>
+<li><p>非集合类对象：对一个不可变对象进行copy操作，只仅仅是指针复制，进行mutableCopy操作，是内容复制；而对一个可变对象进行copy和mutableCopy操作，都是内容复制。</p>
+</li>
+</ul>
+<p>-集合类对象：不可变对象copy相同，进行mutableCopy操作时，虽然数组内存地址发生了变化，但是数组元素的内存地址并没有发生变化（单层深拷贝）；对于可变对象，copy和mutableCopy都是内容复制，内存地址变化，但是数组元素的内存地址并没有发生变化（单层深拷贝）<br>集合类对象和非集合类对象的copy与mutablecopy</p>
+<p>demo1:<br>NSString <em>origStr = @”123456”;<br>NSString </em>strCopy = [origStr copy];<br>NSMutableString *strMtCopy = [origStr mutablecopy];</p>
+<p>demo2:<br>NSMutableStr <em>origStr = [NSMutableString stringWithFormat:@”123456”];<br>NSString </em>strCopy = [origStr copy];<br>NSMutableStr *strMuCopy = [origStr mutablecopy];</p>
+<p>demo3:<br>NSArray <em>arr = @[@”a”, @”b”,@”c”];<br>NSArray </em>arrCopy = [array copy];<br>NSMutableArray *arrayMCopy = [array mutableCopy];</p>
+<h3 id="5、"><a href="#5、" class="headerlink" title="5、"></a>5、</h3>
+        </div>
+        <div class="post-reply">
+            
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+            
+            
+        </div>
+    </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+      </div>
+  </div>
+  <style>
+  #footer {
+    min-height: 10vh;
+    background: black;
+    color: #fff;
+  }
+
+  #footer a {
+    color: #e1e1e1;
+  }
+</style>
+<footer id="footer" class="has-text-centered is-flex center">
+  <div class="container has-padding">
+    <div>
+      <div>
+        <!--请您保留作者署名, 主题制作来之不易-->
+        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
+        <br>
+        Copyright © YuWeizhong 2018
+        <br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/yu.github.io/js/search_core.js"></script>
+<script src="/yu.github.io/js/script.js"></script>
+
+</body>
+</html>
