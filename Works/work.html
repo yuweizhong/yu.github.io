@@ -6,19 +6,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   
-  <title>&#39;const&amp;static&amp;extern&#39; | YuWeizhong</title>
+  <title>work | YuWeizhong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、const用于常量修饰    （1）const用来修饰右边的基本变量或指针变量    （2）被修饰的变量只读，不能被修改123456789int  const  *p   //  *p只读 ;p变量int  * const  p  // *p变量 ; p只读 const  int   * const p //p和*p都只读 int  const  * const  p   //p和*p都只读">
-<meta property="og:type" content="article">
-<meta property="og:title" content="&#39;const&amp;static&amp;extern&#39;">
-<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/2017/09/15/const&static&extern/index.html">
+  <meta name="description" content="Personal Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="work">
+<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/Works/work.html">
 <meta property="og:site_name" content="YuWeizhong">
-<meta property="og:description" content="1、const用于常量修饰    （1）const用来修饰右边的基本变量或指针变量    （2）被修饰的变量只读，不能被修改123456789int  const  *p   //  *p只读 ;p变量int  * const  p  // *p变量 ; p只读 const  int   * const p //p和*p都只读 int  const  * const  p   //p和*p都只读">
+<meta property="og:description" content="Personal Blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-27T12:22:56.464Z">
+<meta property="og:updated_time" content="2018-01-13T06:04:52.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;const&amp;static&amp;extern&#39;">
-<meta name="twitter:description" content="1、const用于常量修饰    （1）const用来修饰右边的基本变量或指针变量    （2）被修饰的变量只读，不能被修改123456789int  const  *p   //  *p只读 ;p变量int  * const  p  // *p变量 ; p只读 const  int   * const p //p和*p都只读 int  const  * const  p   //p和*p都只读">
+<meta name="twitter:title" content="work">
+<meta name="twitter:description" content="Personal Blog">
   
     <link rel="alternate" href="/atom.xml" title="YuWeizhong" type="application/atom+xml">
   
@@ -96,8 +96,7 @@
 
   <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
       <div class="main-inner-content">
-          <!--博文页面-->
-
+          <!--翻页-->
 <style>
     .header-box {
         height: 370px;
@@ -136,63 +135,18 @@
     <div class="container post-box">
         <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
             <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
-                <strong>'const&static&extern'</strong>
+                <strong>work</strong>
             </h1>
             
             <div class="is-flex align-center">
                 <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
                 <span style="padding:0 10px;"> <span class="sub-title">By</span> 小贤</span>
-                <span class="post-date sub-title">at: 2017-09-15</span>
+                <span class="post-date sub-title">at: 2017-08-21</span>
             </div>
-            
-                <div>
-                    
-                </div>
             
         </div>
         <div class="content" style="overflow: auto">
-            <h3 id="1、const"><a href="#1、const" class="headerlink" title="1、const"></a>1、const</h3><p>用于常量修饰<br>    （1）const用来修饰右边的基本变量或指针变量<br>    （2）被修饰的变量只读，不能被修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int  const  *p   //  *p只读 ;p变量</div><div class="line"></div><div class="line">int  * const  p  // *p变量 ; p只读</div><div class="line"></div><div class="line"> const  int   * const p //p和*p都只读</div><div class="line"></div><div class="line"> int  const  * const  p   //p和*p都只读 </div><div class="line"></div><div class="line"> NSString * const myStr = @&quot;myStrStr&quot;; //声明字符串的用法</div></pre></td></tr></table></figure></p>
-<h3 id="2、宏定义"><a href="#2、宏定义" class="headerlink" title="2、宏定义"></a>2、宏定义</h3><p>#define 预定义</p>
-<blockquote>
-<pre><code>在预处理时（编译前）进行文本替换，没有类型，不做任何类型检查
-
-能够定义一些函数方法等等，const做不到的
-
-大量的宏定义会导致编译时间长、二进制文件过大等等
-</code></pre></blockquote>
-<h3 id="3、static"><a href="#3、static" class="headerlink" title="3、static"></a>3、static</h3><p>静态变量修饰</p>
-<h4 id="修饰局部变量："><a href="#修饰局部变量：" class="headerlink" title="修饰局部变量："></a>修饰局部变量：</h4><blockquote>
-<pre><code>1.延长局部变量的生命周期,程序结束才会销毁。
-
-2.局部变量只会生成一份内存,只会初始化一次。
-
-3.改变局部变量的作用域。
-</code></pre></blockquote>
-<h4 id="修饰全局变量"><a href="#修饰全局变量" class="headerlink" title="修饰全局变量"></a>修饰全局变量</h4><blockquote>
-<pre><code>1.只能在本文件中访问,修改全局变量的作用域,生命周期不会改
-
-2.避免重复定义全局变量
-</code></pre></blockquote>
-<p>staic &amp;&amp; const联合使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 声明一个静态的全局只读常量（当前文件）</div><div class="line"> static NSString * const myStr = @&quot;myStrStr&quot;;</div></pre></td></tr></table></figure>
-<h3 id="4、extern"><a href="#4、extern" class="headerlink" title="4、extern"></a>4、extern</h3><blockquote>
-<pre><code>用来获取全局变量(包括全局静态变量)的值，不能用于定义变量，定义和分配内存都在原来类中。
-
-会在当前文件中先查找是否有改变量，其次再去全局查找
-</code></pre></blockquote>
-<p>extern &amp;&amp; const联合使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//全局共享的变量</div><div class="line">A.h</div><div class="line">NSString * const myStr = @&quot;myStrStr&quot;;</div><div class="line">B.h</div><div class="line">extern NSString * const myStr;</div></pre></td></tr></table></figure>
-<h3 id="5、UIKIT-EXTERN"><a href="#5、UIKIT-EXTERN" class="headerlink" title="5、UIKIT_EXTERN"></a>5、UIKIT_EXTERN</h3><p>如果多个.m文件需要用到同一个变量的情况，在pch文件中写上面这行代码,就相当于为每一个.m文件都写这行代码</p>
-<pre><code>//例：苹果 系统预置的通知
-
-UIKIT_EXTERN NSString *const UIKeyboardWillShowNotification;
-
-UIKIT_EXTERN NSString *const UIKeyboardDidShowNotification;
-
-UIKIT_EXTERN NSString *const UIKeyboardWillHideNotification;
-
-UIKIT_EXTERN NSString *const UIKeyboardDidHideNotification;// UIKIT_EXTERN,是经过处理的extern
-</code></pre>
+            
         </div>
         <div class="post-reply">
             
