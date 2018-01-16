@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="full-height">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  
+  <title>iOS UI界面搭建方式 | YuWeizhong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对于iOS界面的搭建，关于使用哪种方式不少人会有一些争议，纯代码、xib或者说是storyboard： 纯代码纯手写代码，灵活容易控制，对于大型项目和团队开发较为友好，特别是在版本控制和代码管理上面，但是代码量较大，较为繁琐。现阶段很多采用Masonry手写代码布局，配合Reveal工具调试。 xib&amp;amp;storyboardxib出现在storyboard之前，和storyboard类似，s">
+<meta name="keywords" content="UI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS UI界面搭建方式">
+<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/2017/12/02/iOS 界面搭建/index.html">
+<meta property="og:site_name" content="YuWeizhong">
+<meta property="og:description" content="对于iOS界面的搭建，关于使用哪种方式不少人会有一些争议，纯代码、xib或者说是storyboard： 纯代码纯手写代码，灵活容易控制，对于大型项目和团队开发较为友好，特别是在版本控制和代码管理上面，但是代码量较大，较为繁琐。现阶段很多采用Masonry手写代码布局，配合Reveal工具调试。 xib&amp;amp;storyboardxib出现在storyboard之前，和storyboard类似，s">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-01-16T06:27:10.042Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS UI界面搭建方式">
+<meta name="twitter:description" content="对于iOS界面的搭建，关于使用哪种方式不少人会有一些争议，纯代码、xib或者说是storyboard： 纯代码纯手写代码，灵活容易控制，对于大型项目和团队开发较为友好，特别是在版本控制和代码管理上面，但是代码量较大，较为繁琐。现阶段很多采用Masonry手写代码布局，配合Reveal工具调试。 xib&amp;amp;storyboardxib出现在storyboard之前，和storyboard类似，s">
+  
+    <link rel="alternate" href="/atom.xml" title="YuWeizhong" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/yu.github.io/css/common.css">
+<link rel="stylesheet" href="/yu.github.io/css/nav.css">
+<link rel="stylesheet" href="/yu.github.io/css/layout.css">
+  
+
+</head>
+
+<body>
+  <header id="navbar" class="overflow-hidden">
+  <div class="container">
+    <nav class="nav">
+         <div class="nav-left">
+            <a href="/yu.github.io/" class="nav-item" style="font-size: 20px;">
+              <span class="logo">小贤</span>'s Blog
+            </a>
+         </div>
+        <div class="nav-center is-hidden position-relative" id="search_container">
+            <div class="nav-item full-width full-height">
+                <i class="fa fa-search has-padding" aria-hidden="true"></i>
+                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
+                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div id="search_result"></div>
+        </div>
+        <div class="nav-right nav-menu">
+            <a class="nav-item" id="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="nav-item" href="/yu.github.io/">
+                Home
+            </a>
+            
+            <a class="nav-item" href="/yu.github.io/Works">
+                My Works
+            </a>
+            
+            <a class="nav-item" href="/yu.github.io/About">
+                About
+            </a>
+            
+        </div>
+        <span class="nav-toggle" id="navMenuDropdown">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
+            
+            <a class="nav-item flex-1" href="/yu.github.io/">
+                Home
+            </a>
+            
+            <a class="nav-item flex-1" href="/yu.github.io/Works">
+                My Works
+            </a>
+            
+            <a class="nav-item flex-1" href="/yu.github.io/About">
+                About
+            </a>
+            
+        </div>
+    </nav>
+  </div>
+</header>
+
+  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
+      <div class="main-inner-content">
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
+    }
+
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
+    }
+
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
+    }
+</style>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>iOS UI界面搭建方式</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> 小贤</span>
+                <span class="post-date sub-title">at: 2017-12-02</span>
+            </div>
+            
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/yu.github.io/tags/UI/">UI</a>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <p>对于iOS界面的搭建，关于使用哪种方式不少人会有一些争议，纯代码、xib或者说是storyboard：</p>
+<p><strong>纯代码</strong><br>纯手写代码，灵活容易控制，对于大型项目和团队开发较为友好，特别是在版本控制和代码管理上面，但是代码量较大，较为繁琐。现阶段很多采用Masonry手写代码布局，配合Reveal工具调试。</p>
+<p><strong>xib&amp;storyboard</strong><br>xib出现在storyboard之前，和storyboard类似，storyboard是各个xib的集合，xib相比storyboard更小规模些。两者都可以实现控件拖拽布局，比较直观，开发较快， storyboard 中可以很方便地理清界面间的调用关系。但是两者对于代码管理不是很友好，不同版本的Xcode打开会造成xib修改，对于冲突的解决也很难看出来。对于复杂的App，storyboard的性能会差一些。</p>
+<p><strong>因此，一般我会采用纯代码和Xib结合的方式：</strong></p>
+<ul>
+<li>对于复杂的、动态生成的界面，建议使用手工编写界面。</li>
+<li>对于需要统一风格的按钮或UI控件，建议使用手工用代码来构造。方便之后的修改和复用。</li>
+<li>对于需要有继承或组合关系的 UIView 类或 UIViewController类，建议用代码手工编写界面。</li>
+<li>对于那些简单的、静态的、非核心功能界面，可以考虑使用 xib 或 storyboard 来完成。</li>
+</ul>
+
+        </div>
+        <div class="post-reply">
+            
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzE5NC85NzUx">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+            
+            
+        </div>
+    </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+      </div>
+  </div>
+  <style>
+  #footer {
+    min-height: 10vh;
+    background: black;
+    color: #fff;
+  }
+
+  #footer a {
+    color: #e1e1e1;
+  }
+</style>
+<footer id="footer" class="has-text-centered is-flex center">
+  <div class="container has-padding">
+    <div>
+      <div>
+        <!--请您保留作者署名, 主题制作来之不易-->
+        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
+        <br>
+        Copyright © YuWeizhong 2018
+        <br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/yu.github.io/js/search_core.js"></script>
+<script src="/yu.github.io/js/script.js"></script>
+
+</body>
+</html>
