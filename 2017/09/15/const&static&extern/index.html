@@ -1,20 +1,42 @@
-extends partial/layout
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 'const&static&extern' · YuWeizhong</title><meta name="description" content="'const&amp;static&amp;extern' - YuWeizhong"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/yu.github.io/favicon.png"><link rel="stylesheet" href="/yu.github.io/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://yuweizhong.github.io/yu.github.io/atom.xml" title="YuWeizhong"></head><body><div class="wrap"><header><a href="/yu.github.io/" class="logo-link"><img src="/yu.github.io/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/yu.github.io/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/yu.github.io/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/yu.github.io/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">'const&static&extern'</h1><div class="post-info">2017年9月15日</div><div class="post-content"><h3 id="1、const"><a href="#1、const" class="headerlink" title="1、const"></a>1、const</h3><p>用于常量修饰<br>    （1）const用来修饰右边的基本变量或指针变量<br>    （2）被修饰的变量只读，不能被修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">int  const  *p   //  *p只读 ;p变量</div><div class="line"></div><div class="line">int  * const  p  // *p变量 ; p只读</div><div class="line"></div><div class="line"> const  int   * const p //p和*p都只读</div><div class="line"></div><div class="line"> int  const  * const  p   //p和*p都只读 </div><div class="line"></div><div class="line"> NSString * const myStr = @&quot;myStrStr&quot;; //声明字符串的用法</div></pre></td></tr></table></figure></p>
+<h3 id="2、宏定义"><a href="#2、宏定义" class="headerlink" title="2、宏定义"></a>2、宏定义</h3><p>#define 预定义</p>
+<blockquote>
+<pre><code>在预处理时（编译前）进行文本替换，没有类型，不做任何类型检查
 
-block site_title
-    != page.title + " · " + config.title
+能够定义一些函数方法等等，const做不到的
 
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
+大量的宏定义会导致编译时间长、二进制文件过大等等
+</code></pre></blockquote>
+<h3 id="3、static"><a href="#3、static" class="headerlink" title="3、static"></a>3、static</h3><p>静态变量修饰</p>
+<h4 id="修饰局部变量："><a href="#修饰局部变量：" class="headerlink" title="修饰局部变量："></a>修饰局部变量：</h4><blockquote>
+<pre><code>1.延长局部变量的生命周期,程序结束才会销毁。
 
-block container
-    include mixins/post
-    +post(page)
+2.局部变量只会生成一份内存,只会初始化一次。
 
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
+3.改变局部变量的作用域。
+</code></pre></blockquote>
+<h4 id="修饰全局变量"><a href="#修饰全局变量" class="headerlink" title="修饰全局变量"></a>修饰全局变量</h4><blockquote>
+<pre><code>1.只能在本文件中访问,修改全局变量的作用域,生命周期不会改
 
-block copyright
-    include partial/copyright
+2.避免重复定义全局变量
+</code></pre></blockquote>
+<p>staic &amp;&amp; const联合使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 声明一个静态的全局只读常量（当前文件）</div><div class="line"> static NSString * const myStr = @&quot;myStrStr&quot;;</div></pre></td></tr></table></figure>
+<h3 id="4、extern"><a href="#4、extern" class="headerlink" title="4、extern"></a>4、extern</h3><blockquote>
+<pre><code>用来获取全局变量(包括全局静态变量)的值，不能用于定义变量，定义和分配内存都在原来类中。
+
+会在当前文件中先查找是否有改变量，其次再去全局查找
+</code></pre></blockquote>
+<p>extern &amp;&amp; const联合使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//全局共享的变量</div><div class="line">A.h</div><div class="line">NSString * const myStr = @&quot;myStrStr&quot;;</div><div class="line">B.h</div><div class="line">extern NSString * const myStr;</div></pre></td></tr></table></figure>
+<h3 id="5、UIKIT-EXTERN"><a href="#5、UIKIT-EXTERN" class="headerlink" title="5、UIKIT_EXTERN"></a>5、UIKIT_EXTERN</h3><p>如果多个.m文件需要用到同一个变量的情况，在pch文件中写上面这行代码,就相当于为每一个.m文件都写这行代码</p>
+<pre><code>//例：苹果 系统预置的通知
+
+UIKIT_EXTERN NSString *const UIKeyboardWillShowNotification;
+
+UIKIT_EXTERN NSString *const UIKeyboardDidShowNotification;
+
+UIKIT_EXTERN NSString *const UIKeyboardWillHideNotification;
+
+UIKIT_EXTERN NSString *const UIKeyboardDidHideNotification;// UIKIT_EXTERN,是经过处理的extern
+</code></pre></div></article></div></main><footer><div class="paginator"><a href="/yu.github.io/2017/10/06/iOS @property/" class="prev">PREV</a><a href="/yu.github.io/2017/09/02/iOS加密和苹果证书/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2018 <a href="https://yuweizhong.github.io/yu.github.io">YuWeizhong</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>

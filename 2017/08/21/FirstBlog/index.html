@@ -1,20 +1,50 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
-
-block copyright
-    include partial/copyright
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> First Blog · YuWeizhong</title><meta name="description" content="First Blog - YuWeizhong"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/yu.github.io/favicon.png"><link rel="stylesheet" href="/yu.github.io/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://yuweizhong.github.io/yu.github.io/atom.xml" title="YuWeizhong"></head><body><div class="wrap"><header><a href="/yu.github.io/" class="logo-link"><img src="/yu.github.io/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/yu.github.io/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/yu.github.io/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/yu.github.io/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">First Blog</h1><div class="post-info">2017年8月21日</div><div class="post-content"><h1 id="hexo-GitHub"><a href="#hexo-GitHub" class="headerlink" title="hexo+GitHub"></a><strong>hexo+GitHub</strong></h1><p> 很早就有写博客这个想法，希望有一个个人的独立博客，最后采用了hexo+github的方式建立了这个个人博客。</p>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p>hexo是一款基于Node.js的静态博客框架，和jekyll相似，鉴于hexo以下优点，最后，使用了hexo作为博客框架</p>
+<ol>
+<li>依赖少（仅依赖node），易于安装</li>
+<li>台湾人写的，不用担心对中文支持不好</li>
+<li>对程序员友好，要是愿意折腾还是有的折腾的</li>
+</ol>
+<h2 id="构建博客步骤"><a href="#构建博客步骤" class="headerlink" title="构建博客步骤"></a>构建博客步骤</h2><ul>
+<li>安装Git Bash</li>
+<li>安装node.js<br>++（傻瓜式安装不多做解释）++</li>
+<li>创建文件夹作仓库（例如blog目录）进入到该目录 </li>
+<li>安装hexo： npm i -g hexo </li>
+<li>初始化：hexo init<h3 id="生成目录"><a href="#生成目录" class="headerlink" title="生成目录"></a>生成目录</h3></li>
+<li style="list-style: none"><input type="checkbox"> node_modules：是依赖包</li>
+<li style="list-style: none"><input type="checkbox"> public：存放的是生成的页面</li>
+<li style="list-style: none"><input type="checkbox"> scaffolds：命令生成文章等的模板</li>
+<li style="list-style: none"><input type="checkbox"> source：用命令创建的各种文章</li>
+<li style="list-style: none"><input type="checkbox"> themes：主题</li>
+<li style="list-style: none"><input type="checkbox"> _config.yml：整个博客的配置</li>
+<li style="list-style: none"><input type="checkbox"> db.json：source解析所得到的</li>
+<li style="list-style: none"><input type="checkbox"> package.json：项目所需模块项目的配置信息</li>
+</ul>
+<h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><ul>
+<li>注册github账号（已注册的忽略）</li>
+<li>创建一个repo，名称为yourname.github.io, 其中yourname是你的github名称 </li>
+<li>创建完之后，用编辑器打开你的blog项目，修改_config.yml文件最后的一些配置(冒号之后都是有一个半角空格的)<br>deploy:<br>type: git<br>repo: <a href="https://github.com/YourgithubName/YourgithubName.github.io.git" target="_blank" rel="external">https://github.com/YourgithubName/YourgithubName.github.io.git</a><br>branch: master</li>
+<li>回到gitbash中，进入你的blog目录，分别执行以下命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>打开浏览器输入：<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 可以查看到博客主页</p>
+<h2 id="上传github"><a href="#上传github" class="headerlink" title="上传github"></a>上传github</h2><ul>
+<li><p>先安装一波：npm install hexo-deployer-git–save（这样才能将你写好的文章部署到github服务器上并让别人浏览到）</p>
+</li>
+<li><p>执行命令(建议每次都按照如下步骤部署)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在浏览器中输入 <a href="http://yourgithubname.github.io" target="_blank" rel="external">http://yourgithubname.github.io</a> 就可以看到你的个人博客啦</p>
+<h3 id="修改博客主页主题"><a href="#修改博客主页主题" class="headerlink" title="修改博客主页主题"></a>修改博客主页主题</h3><p>网址<a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a><br>github上clone到themes里面更改config配置后即可生效</p>
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &apos;文章名&apos;</div></pre></td></tr></table></figure>
+<p>然后你就可以在source/_posts路径下看到你创建的文章啦，编辑完成之后按照前面说的方式部署，在浏览器刷新就能看到你的文章了。至于markdown，可以自行发挥！！！</p>
+<hr>
+<p>可以说，2017年是特殊的一年，从学校步入到了社会，在近两年iOS形势大败之下能够成功入职了某大型互联网金融公司，现在看来也是不错的。当然，在仔细品味大神的博客之后，对博客也萌生了更多的想法，在这后博客时代，博客是一个单纯美好的平台，一个分享、记录的平台。动笔写博客主要是想能够充实自己</p>
+<ol>
+<li>积累==积累一些实在的东西，踏实的继续走下去</li>
+<li>坚持==坚持撰写博客，不断激励自己，不断进步</li>
+<li>分享==分享一些自己学习到的技术和知识</li>
+<li>记录==记录技术道路上的点滴<h4 id="我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！"><a href="#我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！" class="headerlink" title="我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！"></a>我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！</h4></li>
+</ol>
+</div></article></div></main><footer><div class="paginator"><a href="/yu.github.io/2017/08/26/iOS开发之状态栏导航栏/" class="prev">PREV</a></div><div class="copyright"><p>© 2015 - 2018 <a href="https://yuweizhong.github.io/yu.github.io">YuWeizhong</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
