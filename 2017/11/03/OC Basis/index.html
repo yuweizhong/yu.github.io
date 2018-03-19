@@ -1,157 +1,68 @@
 <!DOCTYPE html>
-<html class="full-height">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  
-  <title>OC Basis | YuWeizhong</title>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、Objective-C动态时特性OC语言动态时的特性主要表现在：动态类型、动态绑定、动态加载。  动态类型，区分于静态类型（int、float…），静态类型在编译时决定变量类型，类型不符合就会报错。动态类型即在运行时决定变量类型，OC中的id类型，任何对象都可以被id类型指针所指，到运行时才决定对象的类型。  动态绑定，基于动态类型，在某个实例对象被确定之后，其属性和方法也就被确定了。OC中的">
-<meta property="og:type" content="article">
-<meta property="og:title" content="OC Basis">
-<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/2017/11/03/OC Basis/index.html">
-<meta property="og:site_name" content="YuWeizhong">
-<meta property="og:description" content="1、Objective-C动态时特性OC语言动态时的特性主要表现在：动态类型、动态绑定、动态加载。  动态类型，区分于静态类型（int、float…），静态类型在编译时决定变量类型，类型不符合就会报错。动态类型即在运行时决定变量类型，OC中的id类型，任何对象都可以被id类型指针所指，到运行时才决定对象的类型。  动态绑定，基于动态类型，在某个实例对象被确定之后，其属性和方法也就被确定了。OC中的">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-23T09:00:12.291Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OC Basis">
-<meta name="twitter:description" content="1、Objective-C动态时特性OC语言动态时的特性主要表现在：动态类型、动态绑定、动态加载。  动态类型，区分于静态类型（int、float…），静态类型在编译时决定变量类型，类型不符合就会报错。动态类型即在运行时决定变量类型，OC中的id类型，任何对象都可以被id类型指针所指，到运行时才决定对象的类型。  动态绑定，基于动态类型，在某个实例对象被确定之后，其属性和方法也就被确定了。OC中的">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Personal Blog">
+  <meta name="keywords" content="">
   
-    <link rel="alternate" href="/atom.xml" title="YuWeizhong" type="application/atom+xml">
+    <link rel="icon" href="">
   
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/yu.github.io/css/common.css">
-<link rel="stylesheet" href="/yu.github.io/css/nav.css">
-<link rel="stylesheet" href="/yu.github.io/css/layout.css">
-  
-
+    
+  <title>OC Basis | YuWeizhong</title>
+  <link rel="stylesheet" href="/yu.github.io/style.css">
+  <link rel="stylesheet" href="/yu.github.io/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <header id="navbar" class="overflow-hidden">
-  <div class="container">
-    <nav class="nav">
-         <div class="nav-left">
-            <a href="/yu.github.io/" class="nav-item" style="font-size: 20px;">
-              <span class="logo">小贤</span>'s Blog
-            </a>
-         </div>
-        <div class="nav-center is-hidden position-relative" id="search_container">
-            <div class="nav-item full-width full-height">
-                <i class="fa fa-search has-padding" aria-hidden="true"></i>
-                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
-                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
-            </div>
-            <div id="search_result"></div>
-        </div>
-        <div class="nav-right nav-menu">
-            <a class="nav-item" id="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/">
-                Home
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/Works">
-                My Works
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/About">
-                About
-            </a>
-            
-        </div>
-        <span class="nav-toggle" id="navMenuDropdown">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
-            
-            <a class="nav-item flex-1" href="/yu.github.io/">
-                Home
-            </a>
-            
-            <a class="nav-item flex-1" href="/yu.github.io/Works">
-                My Works
-            </a>
-            
-            <a class="nav-item flex-1" href="/yu.github.io/About">
-                About
-            </a>
-            
-        </div>
-    </nav>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/yu.github.io/">
+      <span>YuWeizhong</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/tags" class="item-link">标签</a>
+          
+        </li>
+      
+    </ul>
   </div>
 </header>
 
-  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
-      <div class="main-inner-content">
-          <!--博文页面-->
-
-<style>
-    .header-box {
-        height: 370px;
-        filter: blur(10px);
-        background-size: cover;
-        background-color: lightsteelblue;
-    }
-
-    .post-box {
-        padding: 15px;
-        padding-top: 60px;
-        min-height: 80vh;
-        margin-top: -200px;
-        border-radius: 4px;
-        background-color: rgba(255,255,255,.8);
-    }
-
-    .post-avatar {
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-    }
-
-    .flow-chart {
-        text-align: center;
-    }
-
-    img[alt="post-cover"] {
-        display: none;
-    }
-</style>
-<header>
-    <div id="header_box" class="header-box"></div>
-</header>
-<section>
-    <div class="container post-box">
-        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
-            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
-                <strong>OC Basis</strong>
-            </h1>
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>OC Basis</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年11月03日</time>
             
-            <div class="is-flex align-center">
-                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
-                <span style="padding:0 10px;"> <span class="sub-title">By</span> 小贤</span>
-                <span class="post-date sub-title">at: 2017-11-03</span>
-            </div>
             
-                <div>
-                    
-                </div>
-            
-        </div>
-        <div class="content" style="overflow: auto">
-            <h3 id="1、Objective-C动态时特性"><a href="#1、Objective-C动态时特性" class="headerlink" title="1、Objective-C动态时特性"></a>1、Objective-C动态时特性</h3><pre><code>OC语言动态时的特性主要表现在：动态类型、动态绑定、动态加载。
+          </div>
+          <h3 id="1、Objective-C动态时特性"><a href="#1、Objective-C动态时特性" class="headerlink" title="1、Objective-C动态时特性"></a>1、Objective-C动态时特性</h3><pre><code>OC语言动态时的特性主要表现在：动态类型、动态绑定、动态加载。
 </code></pre><ul>
 <li><p>动态类型，区分于静态类型（int、float…），静态类型在编译时决定变量类型，类型不符合就会报错。动态类型即在运行时决定变量类型，OC中的id类型，任何对象都可以被id类型指针所指，到运行时才决定对象的类型。</p>
 </li>
@@ -220,71 +131,96 @@ KVO一般的使用场景是数据，需求是数据变化，比如股票价格�
 extension就是匿名的分类，只有头文件没有实现文件。只能扩展方法，不能添加成员变量。扩展的方法只能在原类中实现。例如你扩展NSString,那么你只能在NSString的.m实现（这是不可能的），所以尽量少用扩展。用分类就可以了
 在iOS中继承是单继承，既只能有一个父类。在继承中，子类可以使用父类的方法和变量，当子类想对本类或者父类的变量进行初始化，那么需要重写init（）方法 。父类也可以访问子类的方法和成员变量。、
 </code></pre>
-        </div>
-        <div class="post-reply">
-            
-                <!-- 来必力City版安装代码 -->
-                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzE5NC85NzUx">
-                    <script type="text/javascript">
-                        (function(d, s) {
-                            var j, e = d.getElementsByTagName(s)[0];
-
-                            if (typeof LivereTower === 'function') { return; }
-
-                            j = d.createElement(s);
-                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                            j.async = true;
-
-                            e.parentNode.insertBefore(j, e);
-                        })(document, 'script');
-                    </script>
-                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-                </div>
-                <!-- City版安装代码已完成 -->
-            
-            
+        </section>
+    </article>
+    
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、Objective-C动态时特性"><span class="toc-number">1.</span> <span class="toc-text">1、Objective-C动态时特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、delegate、datasource-amp-block"><span class="toc-number">2.</span> <span class="toc-text">2、delegate、datasource&block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、让对象实现copy功能"><span class="toc-number">3.</span> <span class="toc-text">3、让对象实现copy功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、深拷贝-amp-浅拷贝"><span class="toc-number">4.</span> <span class="toc-text">4、深拷贝&浅拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、进程-amp-线程-同步-amp-异步-并行-amp-串行"><span class="toc-number">5.</span> <span class="toc-text">5、进程&线程 同步&异步 并行&串行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、线程间通信"><span class="toc-number">6.</span> <span class="toc-text">6、线程间通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、iOS数据持久化"><span class="toc-number">7.</span> <span class="toc-text">7、iOS数据持久化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、App生命周期"><span class="toc-number">8.</span> <span class="toc-text">8、App生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、NSCache-amp-NSDictionary"><span class="toc-number">9.</span> <span class="toc-text">9、NSCache&NSDictionary</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、description"><span class="toc-number">10.</span> <span class="toc-text">10、description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、ARC"><span class="toc-number">11.</span> <span class="toc-text">11、ARC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、assign-VS-weak-；block-VS-weak"><span class="toc-number">12.</span> <span class="toc-text">12、assign VS weak ；block VS weak</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、KVC-KVO-NSNotifiction-delegate-block"><span class="toc-number">13.</span> <span class="toc-text">13、KVC KVO NSNotifiction delegate block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、MVC-vs-MVVM"><span class="toc-number">14.</span> <span class="toc-text">14、MVC vs MVVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、NSNumber-和-NSInteger"><span class="toc-number">15.</span> <span class="toc-text">15、NSNumber 和 NSInteger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16、如何重写类方法"><span class="toc-number">16.</span> <span class="toc-text">16、如何重写类方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17、category-extension-继承"><span class="toc-number">17.</span> <span class="toc-text">17、category/extension/继承</span></a></li></ol>
         </div>
     </div>
-</section>
-<script>
-    // 获取第一张图, 用以当封面背景图
-    var img = document.querySelectorAll('img')[1]
+    
+  </aside>
+</main>
 
-    if (img) {
-        var header_box = document.querySelector('#header_box')
-        header_box.style.backgroundImage = 'url('+ img.src +')'
-    }
-</script>
-      </div>
-  </div>
-  <style>
-  #footer {
-    min-height: 10vh;
-    background: black;
-    color: #fff;
-  }
 
-  #footer a {
-    color: #e1e1e1;
-  }
-</style>
-<footer id="footer" class="has-text-centered is-flex center">
-  <div class="container has-padding">
+
+  <footer>
+  <div class="copyright">
     <div>
-      <div>
-        <!--请您保留作者署名, 主题制作来之不易-->
-        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
-        <br>
-        Copyright © YuWeizhong 2018
-        <br>
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-      </div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
     </div>
   </div>
 </footer>
 
-<script src="/yu.github.io/js/search_core.js"></script>
-<script src="/yu.github.io/js/script.js"></script>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/yu.github.io/lib/in-view.min.js"></script>
+<script src="/yu.github.io/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/yu.github.io/lib/jquery.fancybox.min.js"></script>
+
 
 </body>
 </html>

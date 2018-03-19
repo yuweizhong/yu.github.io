@@ -1,182 +1,93 @@
 <!DOCTYPE html>
-<html class="full-height">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  
-  <title>about | YuWeizhong</title>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/About/index.html">
-<meta property="og:site_name" content="YuWeizhong">
-<meta property="og:description" content="Personal Blog">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-13T05:59:28.424Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="Personal Blog">
+  <meta name="keywords" content="">
   
-    <link rel="alternate" href="/atom.xml" title="YuWeizhong" type="application/atom+xml">
+    <link rel="icon" href="">
   
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/yu.github.io/css/common.css">
-<link rel="stylesheet" href="/yu.github.io/css/nav.css">
-<link rel="stylesheet" href="/yu.github.io/css/layout.css">
-  
-
+    
+  <title>about | YuWeizhong</title>
+  <link rel="stylesheet" href="/yu.github.io/style.css">
+  <link rel="stylesheet" href="/yu.github.io/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <header id="navbar" class="overflow-hidden">
-  <div class="container">
-    <nav class="nav">
-         <div class="nav-left">
-            <a href="/yu.github.io/" class="nav-item" style="font-size: 20px;">
-              <span class="logo">小贤</span>'s Blog
-            </a>
-         </div>
-        <div class="nav-center is-hidden position-relative" id="search_container">
-            <div class="nav-item full-width full-height">
-                <i class="fa fa-search has-padding" aria-hidden="true"></i>
-                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
-                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
-            </div>
-            <div id="search_result"></div>
-        </div>
-        <div class="nav-right nav-menu">
-            <a class="nav-item" id="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/">
-                Home
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/Works">
-                My Works
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/About">
-                About
-            </a>
-            
-        </div>
-        <span class="nav-toggle" id="navMenuDropdown">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
-            
-            <a class="nav-item flex-1" href="/yu.github.io/">
-                Home
-            </a>
-            
-            <a class="nav-item flex-1" href="/yu.github.io/Works">
-                My Works
-            </a>
-            
-            <a class="nav-item flex-1" href="/yu.github.io/About">
-                About
-            </a>
-            
-        </div>
-    </nav>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/yu.github.io/">
+      <span>YuWeizhong</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/tags" class="item-link">标签</a>
+          
+        </li>
+      
+    </ul>
   </div>
 </header>
 
-  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
-      <div class="main-inner-content">
-          <style>
-    .content-box {
-        min-height: 93vh;
-        padding: 15px;
-        background-color: rgba(255, 255, 255, .8);
-    }
-
-    .sns-container li a{
-        color: black;
-    }
-</style>
-
-<div class="container">
-    <div class="content-box full-width is-flex justify-center">
-        <div class="columns">
-            <div class="column is-5">
-                <img class="avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
-            </div>
-            <div class="column">
-                <div class="content">
-                    <h1>
-                        About
-                        <br>
-                        <strong>小贤</strong>
-                    </h1>
-                    <p class="is-flex align-center"><i class="fa fa-location-arrow" style="margin-right: 5px;"></i> Earth</p>
-                    <p>New Starting</p>
-                    <p><p>iOS developer</p></p>
-
-                </div>
-                <div>
-                    <ul class="sns-container is-flex">
-                        
-
-                        
-
-                        
-
-                        
-
-                        
-
-                        
-
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-      </div>
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>about</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年08月21日</time>
+            
+            
+          </div>
+          
+        </section>
+    </article>
+    
+        
   </div>
-  <style>
-  #footer {
-    min-height: 10vh;
-    background: black;
-    color: #fff;
-  }
+  <aside>
+    
+  </aside>
+</main>
 
-  #footer a {
-    color: #e1e1e1;
-  }
-</style>
-<footer id="footer" class="has-text-centered is-flex center">
-  <div class="container has-padding">
+
+
+
+  <footer>
+  <div class="copyright">
     <div>
-      <div>
-        <!--请您保留作者署名, 主题制作来之不易-->
-        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
-        <br>
-        Copyright © YuWeizhong 2018
-        <br>
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-      </div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
     </div>
   </div>
 </footer>
 
-<script src="/yu.github.io/js/search_core.js"></script>
-<script src="/yu.github.io/js/script.js"></script>
+
 
 </body>
 </html>

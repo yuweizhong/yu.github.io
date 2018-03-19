@@ -1,157 +1,68 @@
 <!DOCTYPE html>
-<html class="full-height">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  
-  <title>First Blog | YuWeizhong</title>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo+GitHub 很早就有写博客这个想法，希望有一个个人的独立博客，最后采用了hexo+github的方式建立了这个个人博客。 hexohexo是一款基于Node.js的静态博客框架，和jekyll相似，鉴于hexo以下优点，最后，使用了hexo作为博客框架  依赖少（仅依赖node），易于安装 台湾人写的，不用担心对中文支持不好 对程序员友好，要是愿意折腾还是有的折腾的  构建博客步骤 安">
-<meta property="og:type" content="article">
-<meta property="og:title" content="First Blog">
-<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/2017/08/21/FirstBlog/index.html">
-<meta property="og:site_name" content="YuWeizhong">
-<meta property="og:description" content="hexo+GitHub 很早就有写博客这个想法，希望有一个个人的独立博客，最后采用了hexo+github的方式建立了这个个人博客。 hexohexo是一款基于Node.js的静态博客框架，和jekyll相似，鉴于hexo以下优点，最后，使用了hexo作为博客框架  依赖少（仅依赖node），易于安装 台湾人写的，不用担心对中文支持不好 对程序员友好，要是愿意折腾还是有的折腾的  构建博客步骤 安">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-21T11:58:22.710Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First Blog">
-<meta name="twitter:description" content="hexo+GitHub 很早就有写博客这个想法，希望有一个个人的独立博客，最后采用了hexo+github的方式建立了这个个人博客。 hexohexo是一款基于Node.js的静态博客框架，和jekyll相似，鉴于hexo以下优点，最后，使用了hexo作为博客框架  依赖少（仅依赖node），易于安装 台湾人写的，不用担心对中文支持不好 对程序员友好，要是愿意折腾还是有的折腾的  构建博客步骤 安">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Personal Blog">
+  <meta name="keywords" content="">
   
-    <link rel="alternate" href="/atom.xml" title="YuWeizhong" type="application/atom+xml">
+    <link rel="icon" href="">
   
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/yu.github.io/css/common.css">
-<link rel="stylesheet" href="/yu.github.io/css/nav.css">
-<link rel="stylesheet" href="/yu.github.io/css/layout.css">
-  
-
+    
+  <title>First Blog | YuWeizhong</title>
+  <link rel="stylesheet" href="/yu.github.io/style.css">
+  <link rel="stylesheet" href="/yu.github.io/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <header id="navbar" class="overflow-hidden">
-  <div class="container">
-    <nav class="nav">
-         <div class="nav-left">
-            <a href="/yu.github.io/" class="nav-item" style="font-size: 20px;">
-              <span class="logo">小贤</span>'s Blog
-            </a>
-         </div>
-        <div class="nav-center is-hidden position-relative" id="search_container">
-            <div class="nav-item full-width full-height">
-                <i class="fa fa-search has-padding" aria-hidden="true"></i>
-                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
-                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
-            </div>
-            <div id="search_result"></div>
-        </div>
-        <div class="nav-right nav-menu">
-            <a class="nav-item" id="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/">
-                Home
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/Works">
-                My Works
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/About">
-                About
-            </a>
-            
-        </div>
-        <span class="nav-toggle" id="navMenuDropdown">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
-            
-            <a class="nav-item flex-1" href="/yu.github.io/">
-                Home
-            </a>
-            
-            <a class="nav-item flex-1" href="/yu.github.io/Works">
-                My Works
-            </a>
-            
-            <a class="nav-item flex-1" href="/yu.github.io/About">
-                About
-            </a>
-            
-        </div>
-    </nav>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/yu.github.io/">
+      <span>YuWeizhong</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/tags" class="item-link">标签</a>
+          
+        </li>
+      
+    </ul>
   </div>
 </header>
 
-  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
-      <div class="main-inner-content">
-          <!--博文页面-->
-
-<style>
-    .header-box {
-        height: 370px;
-        filter: blur(10px);
-        background-size: cover;
-        background-color: lightsteelblue;
-    }
-
-    .post-box {
-        padding: 15px;
-        padding-top: 60px;
-        min-height: 80vh;
-        margin-top: -200px;
-        border-radius: 4px;
-        background-color: rgba(255,255,255,.8);
-    }
-
-    .post-avatar {
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-    }
-
-    .flow-chart {
-        text-align: center;
-    }
-
-    img[alt="post-cover"] {
-        display: none;
-    }
-</style>
-<header>
-    <div id="header_box" class="header-box"></div>
-</header>
-<section>
-    <div class="container post-box">
-        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
-            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
-                <strong>First Blog</strong>
-            </h1>
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>First Blog</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年08月21日</time>
             
-            <div class="is-flex align-center">
-                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
-                <span style="padding:0 10px;"> <span class="sub-title">By</span> 小贤</span>
-                <span class="post-date sub-title">at: 2017-08-21</span>
-            </div>
             
-                <div>
-                    
-                </div>
-            
-        </div>
-        <div class="content" style="overflow: auto">
-            <h1 id="hexo-GitHub"><a href="#hexo-GitHub" class="headerlink" title="hexo+GitHub"></a><strong>hexo+GitHub</strong></h1><p> 很早就有写博客这个想法，希望有一个个人的独立博客，最后采用了hexo+github的方式建立了这个个人博客。</p>
+          </div>
+          <h1 id="hexo-GitHub"><a href="#hexo-GitHub" class="headerlink" title="hexo+GitHub"></a><strong>hexo+GitHub</strong></h1><p> 很早就有写博客这个想法，希望有一个个人的独立博客，最后采用了hexo+github的方式建立了这个个人博客。</p>
 <h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p>hexo是一款基于Node.js的静态博客框架，和jekyll相似，鉴于hexo以下优点，最后，使用了hexo作为博客框架</p>
 <ol>
 <li>依赖少（仅依赖node），易于安装</li>
@@ -201,71 +112,96 @@
 <li>记录==记录技术道路上的点滴<h4 id="我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！"><a href="#我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！" class="headerlink" title="我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！"></a>我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！</h4></li>
 </ol>
 
-        </div>
-        <div class="post-reply">
-            
-                <!-- 来必力City版安装代码 -->
-                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzE5NC85NzUx">
-                    <script type="text/javascript">
-                        (function(d, s) {
-                            var j, e = d.getElementsByTagName(s)[0];
-
-                            if (typeof LivereTower === 'function') { return; }
-
-                            j = d.createElement(s);
-                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                            j.async = true;
-
-                            e.parentNode.insertBefore(j, e);
-                        })(document, 'script');
-                    </script>
-                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-                </div>
-                <!-- City版安装代码已完成 -->
-            
-            
+        </section>
+    </article>
+    
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-GitHub"><span class="toc-number">1.</span> <span class="toc-text">hexo+GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo"><span class="toc-number">1.1.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建博客步骤"><span class="toc-number">1.2.</span> <span class="toc-text">构建博客步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成目录"><span class="toc-number">1.2.1.</span> <span class="toc-text">生成目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github"><span class="toc-number">1.3.</span> <span class="toc-text">github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传github"><span class="toc-number">1.4.</span> <span class="toc-text">上传github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改博客主页主题"><span class="toc-number">1.4.1.</span> <span class="toc-text">修改博客主页主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建文章"><span class="toc-number">1.4.2.</span> <span class="toc-text">新建文章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">我的博客诞生于2017年，伴随着第一份正式工作的尘埃落定。希望接下来能够坚持这个习惯，能够不断充实自己！！！</span></a></li></ol></li></ol></li></ol></li></ol>
         </div>
     </div>
-</section>
-<script>
-    // 获取第一张图, 用以当封面背景图
-    var img = document.querySelectorAll('img')[1]
+    
+  </aside>
+</main>
 
-    if (img) {
-        var header_box = document.querySelector('#header_box')
-        header_box.style.backgroundImage = 'url('+ img.src +')'
-    }
-</script>
-      </div>
-  </div>
-  <style>
-  #footer {
-    min-height: 10vh;
-    background: black;
-    color: #fff;
-  }
 
-  #footer a {
-    color: #e1e1e1;
-  }
-</style>
-<footer id="footer" class="has-text-centered is-flex center">
-  <div class="container has-padding">
+
+  <footer>
+  <div class="copyright">
     <div>
-      <div>
-        <!--请您保留作者署名, 主题制作来之不易-->
-        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
-        <br>
-        Copyright © YuWeizhong 2018
-        <br>
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-      </div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
     </div>
   </div>
 </footer>
 
-<script src="/yu.github.io/js/search_core.js"></script>
-<script src="/yu.github.io/js/script.js"></script>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/yu.github.io/lib/in-view.min.js"></script>
+<script src="/yu.github.io/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/yu.github.io/lib/jquery.fancybox.min.js"></script>
+
 
 </body>
 </html>

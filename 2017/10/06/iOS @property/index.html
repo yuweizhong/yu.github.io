@@ -1,160 +1,76 @@
 <!DOCTYPE html>
-<html class="full-height">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  
-  <title>iOS @property | YuWeizhong</title>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对于property，iOS开发者并不会陌生，无时无刻不在接触可是@property 的本质是什么？  @property = ivar + getter + setter;  “属性” (property)有两大概念：ivar（实例变量）、存取方法（access method ＝ getter + setter）“属性” (property)作为 Objective-C 的一项特性，主要的作用就">
-<meta name="keywords" content="iOS property copy weak strong">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS @property">
-<meta property="og:url" content="https://yuweizhong.github.io/yu.github.io/2017/10/06/iOS @property/index.html">
-<meta property="og:site_name" content="YuWeizhong">
-<meta property="og:description" content="对于property，iOS开发者并不会陌生，无时无刻不在接触可是@property 的本质是什么？  @property = ivar + getter + setter;  “属性” (property)有两大概念：ivar（实例变量）、存取方法（access method ＝ getter + setter）“属性” (property)作为 Objective-C 的一项特性，主要的作用就">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-10T12:26:26.512Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS @property">
-<meta name="twitter:description" content="对于property，iOS开发者并不会陌生，无时无刻不在接触可是@property 的本质是什么？  @property = ivar + getter + setter;  “属性” (property)有两大概念：ivar（实例变量）、存取方法（access method ＝ getter + setter）“属性” (property)作为 Objective-C 的一项特性，主要的作用就">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Personal Blog">
+  <meta name="keywords" content="">
   
-    <link rel="alternate" href="/atom.xml" title="YuWeizhong" type="application/atom+xml">
+    <link rel="icon" href="">
   
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/yu.github.io/css/common.css">
-<link rel="stylesheet" href="/yu.github.io/css/nav.css">
-<link rel="stylesheet" href="/yu.github.io/css/layout.css">
-  
-
+    
+  <title>iOS @property | YuWeizhong</title>
+  <link rel="stylesheet" href="/yu.github.io/style.css">
+  <link rel="stylesheet" href="/yu.github.io/lib/jquery.fancybox.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <header id="navbar" class="overflow-hidden">
-  <div class="container">
-    <nav class="nav">
-         <div class="nav-left">
-            <a href="/yu.github.io/" class="nav-item" style="font-size: 20px;">
-              <span class="logo">小贤</span>'s Blog
-            </a>
-         </div>
-        <div class="nav-center is-hidden position-relative" id="search_container">
-            <div class="nav-item full-width full-height">
-                <i class="fa fa-search has-padding" aria-hidden="true"></i>
-                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
-                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
-            </div>
-            <div id="search_result"></div>
-        </div>
-        <div class="nav-right nav-menu">
-            <a class="nav-item" id="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/">
-                Home
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/Works">
-                My Works
-            </a>
-            
-            <a class="nav-item" href="/yu.github.io/About">
-                About
-            </a>
-            
-        </div>
-        <span class="nav-toggle" id="navMenuDropdown">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
-            
-            <a class="nav-item flex-1" href="/yu.github.io/">
-                Home
-            </a>
-            
-            <a class="nav-item flex-1" href="/yu.github.io/Works">
-                My Works
-            </a>
-            
-            <a class="nav-item flex-1" href="/yu.github.io/About">
-                About
-            </a>
-            
-        </div>
-    </nav>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/yu.github.io/">
+      <span>YuWeizhong</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/about" class="item-link">关于</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/yu.github.io/tags" class="item-link">标签</a>
+          
+        </li>
+      
+    </ul>
   </div>
 </header>
 
-  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
-      <div class="main-inner-content">
-          <!--博文页面-->
-
-<style>
-    .header-box {
-        height: 370px;
-        filter: blur(10px);
-        background-size: cover;
-        background-color: lightsteelblue;
-    }
-
-    .post-box {
-        padding: 15px;
-        padding-top: 60px;
-        min-height: 80vh;
-        margin-top: -200px;
-        border-radius: 4px;
-        background-color: rgba(255,255,255,.8);
-    }
-
-    .post-avatar {
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-    }
-
-    .flow-chart {
-        text-align: center;
-    }
-
-    img[alt="post-cover"] {
-        display: none;
-    }
-</style>
-<header>
-    <div id="header_box" class="header-box"></div>
-</header>
-<section>
-    <div class="container post-box">
-        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
-            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
-                <strong>iOS @property</strong>
-            </h1>
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>iOS @property</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月06日</time>
             
-            <div class="is-flex align-center">
-                <img class="post-avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
-                <span style="padding:0 10px;"> <span class="sub-title">By</span> 小贤</span>
-                <span class="post-date sub-title">at: 2017-10-06</span>
-            </div>
             
-                <div>
-                    
-                         <a class="tag is-post-tag" href="/yu.github.io/tags/iOS-property-copy-weak-strong/">iOS property copy weak strong</a>
-                    
-                </div>
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/yu.github.io/tags/#iOS property copy weak strong" class='tag'>iOS property copy weak strong</a>
+
+
             
-        </div>
-        <div class="content" style="overflow: auto">
-            <p>对于property，iOS开发者并不会陌生，无时无刻不在接触可是<strong>@property 的本质是什么？</strong></p>
+          </div>
+          <p>对于property，iOS开发者并不会陌生，无时无刻不在接触可是<strong>@property 的本质是什么？</strong></p>
 <blockquote>
 <p>@property = ivar + getter + setter;</p>
 </blockquote>
@@ -195,71 +111,96 @@
 <p>经过copy关键字修饰过的str1没有因为str的变化而变化，经过strong修饰过的str2却随str的改变而改变。对于希望字符串的值不跟着str变化，使用用copy来设置string的属性。如果希望字串的值跟着赋值的字串的值变化，可以使用strong。</p>
 <p>**D.为什么不用assign修饰一个对象，而可以修饰基本数据类型？<br>assign修饰的对象（编译的时候会产生警告：Assigning retained object to unsafe property; object will be released after assignment）在释放之后，指针的地址还是存在的，并没有被置为nil，造成野指针。对象分配在堆上的某块内存，如果在后续的内存分配中，刚好分到了这块地址，程序就会crash。而基础数据类型是分配在栈上，栈的内存会由系统自己自动处理回收，不会造成野指针。</p>
 
-        </div>
-        <div class="post-reply">
-            
-                <!-- 来必力City版安装代码 -->
-                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzE5NC85NzUx">
-                    <script type="text/javascript">
-                        (function(d, s) {
-                            var j, e = d.getElementsByTagName(s)[0];
-
-                            if (typeof LivereTower === 'function') { return; }
-
-                            j = d.createElement(s);
-                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                            j.async = true;
-
-                            e.parentNode.insertBefore(j, e);
-                        })(document, 'script');
-                    </script>
-                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-                </div>
-                <!-- City版安装代码已完成 -->
-            
-            
+        </section>
+    </article>
+    
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#property属性关键字"><span class="toc-number">1.</span> <span class="toc-text">@property属性关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#什么情况使用-weak-关键字？"><span class="toc-number">1.1.</span> <span class="toc-text">什么情况使用 weak 关键字？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不同点："><span class="toc-number">1.2.</span> <span class="toc-text">不同点：</span></a></li></ol></li></ol>
         </div>
     </div>
-</section>
-<script>
-    // 获取第一张图, 用以当封面背景图
-    var img = document.querySelectorAll('img')[1]
+    
+  </aside>
+</main>
 
-    if (img) {
-        var header_box = document.querySelector('#header_box')
-        header_box.style.backgroundImage = 'url('+ img.src +')'
-    }
-</script>
-      </div>
-  </div>
-  <style>
-  #footer {
-    min-height: 10vh;
-    background: black;
-    color: #fff;
-  }
 
-  #footer a {
-    color: #e1e1e1;
-  }
-</style>
-<footer id="footer" class="has-text-centered is-flex center">
-  <div class="container has-padding">
+
+  <footer>
+  <div class="copyright">
     <div>
-      <div>
-        <!--请您保留作者署名, 主题制作来之不易-->
-        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
-        <br>
-        Copyright © YuWeizhong 2018
-        <br>
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-      </div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
     </div>
   </div>
 </footer>
 
-<script src="/yu.github.io/js/search_core.js"></script>
-<script src="/yu.github.io/js/script.js"></script>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/yu.github.io/lib/in-view.min.js"></script>
+<script src="/yu.github.io/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="/yu.github.io/lib/jquery.fancybox.min.js"></script>
+
 
 </body>
 </html>
