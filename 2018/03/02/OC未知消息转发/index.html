@@ -1,162 +1,20 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Personal Blog">
-  <meta name="keywords" content="">
-  
-    <link rel="icon" href="">
-  
-    
-  <title>resolveInstanceMethod和resolveClassMethod | YuWeizhong</title>
-  <link rel="stylesheet" href="/yu.github.io/style.css">
-  <link rel="stylesheet" href="/yu.github.io/lib/jquery.fancybox.min.css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+extends partial/layout
 
-<body>
-  <header>
-  <div class="header-container">
-    <a class='logo' href="/yu.github.io/">
-      <span>YuWeizhong</span>
-    </a>
-    <ul class="right-header">
-      
-        <li class="nav-item">
-          
-            <a href="/yu.github.io/" class="item-link">首页</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/yu.github.io/about" class="item-link">关于</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/yu.github.io/archives" class="item-link">归档</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/yu.github.io/tags" class="item-link">标签</a>
-          
-        </li>
-      
-    </ul>
-  </div>
-</header>
+block site_title
+    != page.title + " · " + config.title
 
-  <main id='post'>
-  <div class="content">
-    <article>
-        <section class="content markdown-body">
-          <h1>resolveInstanceMethod和resolveClassMethod</h1>
-          <div class='post-meta'>
-            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年03月02日</time>
-            
-            
-              | 
-                  <i class="fa fa-tag" aria-hidden="true"></i>
-                
-               
-  <a href="/yu.github.io/tags/#method" class='tag'>method</a>
+block description
+    - var desc = page.desc || page.title + ' - ' + config.author;
+    meta(name="description", content=desc)
 
+block container
+    include mixins/post
+    +post(page)
 
-            
-          </div>
-          <p>在iOS中，消息发送是通过，objc_msgSend(id, SEL, …)来实现的。<br>首先会在对象的类对象的cache,method list以及父类对象的cache,method list依次查找SEL对应的IMP。<br>如果向一个对象发送无法它无法处理的消息，一般会出现crash。</p>
-<p>通过实现动态决议和消息转发。只有当动态决议无法决议selector的实现，才会尝试进行消息转发，可以避免一些crash情况。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//针对实例方法</div><div class="line">+ (BOOL)resolveInstanceMethod:(SEL)name &#123;</div><div class="line">	 NSLog(@&quot; &gt;&gt; Instance resolving %@&quot;, NSStringFromSelector(name)); </div><div class="line">	 if (name == @selector(MissMethod)) &#123; </div><div class="line">	 /*</div><div class="line">	 **就能在运行期动态地为 name 这个 selector 添加实现：dynamicMethodIMP。class_addMethod是运行时函数，所以需要导入头文件：objc/runtime.h。</div><div class="line">	 */</div><div class="line">	 class_addMethod([self class], name, (IMP)dynamicMethodIMP, &quot;v@:&quot;);</div><div class="line">	  return YES; &#125; </div><div class="line">	  return [super resolveInstanceMethod:name]; </div><div class="line">	&#125;</div><div class="line"></div><div class="line">//针对类方法</div><div class="line"> + (BOOL)resolveClassMethod:(SEL)name &#123; </div><div class="line"> 	NSLog(@&quot; &gt;&gt; Class resolving %@&quot;, NSStringFromSelector(name)); </div><div class="line"> 	return [super resolveClassMethod:name]; </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+block pagination
+    include mixins/paginator
+    +post()
+    include partial/comment
 
-        </section>
-    </article>
-    
-        
-  </div>
-  <aside>
-    
-  </aside>
-</main>
-
-
-
-  <footer>
-  <div class="copyright">
-    <div>
-      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
-    </div>
-    <div>
-      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
-    </div>
-  </div>
-</footer>
-
-
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="/yu.github.io/lib/in-view.min.js"></script>
-<script src="/yu.github.io/lib/lodash.min.js"></script>
-<script>
-  var isDown = true
-  var oldY = 0
-  inView.offset(50)
-
-  document.body.addEventListener('touchstart', function(){});
-  
-  window.addEventListener('scroll', _.throttle(e => {
-    var currentY = window.scrollY
-    if((oldY - currentY) < 0) {
-      isDown = true
-    } else {
-      isDown = false
-    }
-    oldY = currentY
-  }, 250))
-
-  $("article img").each(function() {
-      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
-      $(this).wrapAll(strA);
-  });
-
-  $('.toc-link').each(function() {
-      var href = $(this).attr("href");
-      
-      inView(href).on('exit', () => {
-        if (isDown) {
-          handleActive(href)
-        }
-      })
-
-      inView(href).on('enter', () => {
-        if (!isDown) {
-          handleActive(href)
-        }
-      })
-
-      this.onclick = function(e) {
-        var pos = $(href).offset().top - 10;
-        $("html,body").animate({scrollTop: pos}, 300);
-        setTimeout(() => {
-          handleActive(href)
-        }, 350)
-        return false
-      }
-  })
-
-  function handleActive(href) {
-    document.querySelectorAll('.toc-link').forEach(elm => {
-      elm.classList.remove('active')
-    })
-    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
-  }
-</script>
-<script src="/yu.github.io/lib/jquery.fancybox.min.js"></script>
-
-
-</body>
-</html>
+block copyright
+    include partial/copyright

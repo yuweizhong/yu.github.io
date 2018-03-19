@@ -1,169 +1,20 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Personal Blog">
-  <meta name="keywords" content="">
-  
-    <link rel="icon" href="">
-  
-    
-  <title>iOS UI界面搭建方式 | YuWeizhong</title>
-  <link rel="stylesheet" href="/yu.github.io/style.css">
-  <link rel="stylesheet" href="/yu.github.io/lib/jquery.fancybox.min.css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+extends partial/layout
 
-<body>
-  <header>
-  <div class="header-container">
-    <a class='logo' href="/yu.github.io/">
-      <span>YuWeizhong</span>
-    </a>
-    <ul class="right-header">
-      
-        <li class="nav-item">
-          
-            <a href="/yu.github.io/" class="item-link">首页</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/yu.github.io/about" class="item-link">关于</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/yu.github.io/archives" class="item-link">归档</a>
-          
-        </li>
-      
-        <li class="nav-item">
-          
-            <a href="/yu.github.io/tags" class="item-link">标签</a>
-          
-        </li>
-      
-    </ul>
-  </div>
-</header>
+block site_title
+    != page.title + " · " + config.title
 
-  <main id='post'>
-  <div class="content">
-    <article>
-        <section class="content markdown-body">
-          <h1>iOS UI界面搭建方式</h1>
-          <div class='post-meta'>
-            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年12月02日</time>
-            
-            
-              | 
-                  <i class="fa fa-tag" aria-hidden="true"></i>
-                
-               
-  <a href="/yu.github.io/tags/#UI" class='tag'>UI</a>
+block description
+    - var desc = page.desc || page.title + ' - ' + config.author;
+    meta(name="description", content=desc)
 
+block container
+    include mixins/post
+    +post(page)
 
-            
-          </div>
-          <p>对于iOS界面的搭建，关于使用哪种方式不少人会有一些争议，纯代码、xib或者说是storyboard：</p>
-<p><strong>纯代码</strong><br>纯手写代码，灵活容易控制，对于大型项目和团队开发较为友好，特别是在版本控制和代码管理上面，但是代码量较大，较为繁琐。现阶段很多采用Masonry手写代码布局，配合Reveal工具调试。</p>
-<p><strong>xib&amp;storyboard</strong><br>xib出现在storyboard之前，和storyboard类似，storyboard是各个xib的集合，xib相比storyboard更小规模些。两者都可以实现控件拖拽布局，比较直观，开发较快， storyboard 中可以很方便地理清界面间的调用关系。但是两者对于代码管理不是很友好，不同版本的Xcode打开会造成xib修改，对于冲突的解决也很难看出来。对于复杂的App，storyboard的性能会差一些。</p>
-<p><strong>因此，一般我会采用纯代码和Xib结合的方式：</strong></p>
-<ul>
-<li>对于复杂的、动态生成的界面，建议使用手工编写界面。</li>
-<li>对于需要统一风格的按钮或UI控件，建议使用手工用代码来构造。方便之后的修改和复用。</li>
-<li>对于需要有继承或组合关系的 UIView 类或 UIViewController类，建议用代码手工编写界面。</li>
-<li>对于那些简单的、静态的、非核心功能界面，可以考虑使用 xib 或 storyboard 来完成。</li>
-</ul>
+block pagination
+    include mixins/paginator
+    +post()
+    include partial/comment
 
-        </section>
-    </article>
-    
-        
-  </div>
-  <aside>
-    
-  </aside>
-</main>
-
-
-
-  <footer>
-  <div class="copyright">
-    <div>
-      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
-    </div>
-    <div>
-      Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a>
-    </div>
-  </div>
-</footer>
-
-
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="/yu.github.io/lib/in-view.min.js"></script>
-<script src="/yu.github.io/lib/lodash.min.js"></script>
-<script>
-  var isDown = true
-  var oldY = 0
-  inView.offset(50)
-
-  document.body.addEventListener('touchstart', function(){});
-  
-  window.addEventListener('scroll', _.throttle(e => {
-    var currentY = window.scrollY
-    if((oldY - currentY) < 0) {
-      isDown = true
-    } else {
-      isDown = false
-    }
-    oldY = currentY
-  }, 250))
-
-  $("article img").each(function() {
-      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
-      $(this).wrapAll(strA);
-  });
-
-  $('.toc-link').each(function() {
-      var href = $(this).attr("href");
-      
-      inView(href).on('exit', () => {
-        if (isDown) {
-          handleActive(href)
-        }
-      })
-
-      inView(href).on('enter', () => {
-        if (!isDown) {
-          handleActive(href)
-        }
-      })
-
-      this.onclick = function(e) {
-        var pos = $(href).offset().top - 10;
-        $("html,body").animate({scrollTop: pos}, 300);
-        setTimeout(() => {
-          handleActive(href)
-        }, 350)
-        return false
-      }
-  })
-
-  function handleActive(href) {
-    document.querySelectorAll('.toc-link').forEach(elm => {
-      elm.classList.remove('active')
-    })
-    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
-  }
-</script>
-<script src="/yu.github.io/lib/jquery.fancybox.min.js"></script>
-
-
-</body>
-</html>
+block copyright
+    include partial/copyright
