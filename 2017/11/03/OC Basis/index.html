@@ -22,7 +22,7 @@
 <li><p>非集合类对象：对一个不可变对象进行copy操作，只仅仅是指针复制，进行mutableCopy操作，是内容复制；而对一个可变对象进行copy和mutableCopy操作，都是内容复制。</p>
 </li>
 </ul>
-<p>-集合类对象：不可变对象copy相同，进行mutableCopy操作时，虽然数组内存地址发生了变化，但是数组元素的内存地址并没有发生变化（单层深拷贝）；对于可变对象，copy和mutableCopy都是内容复制，内存地址变化，但是数组元素的内存地址并没有发生变化（单层深拷贝）<br>集合类对象和非集合类对象的copy与mutablecopy</p>
+<p>-集合类对象：不可变对象copy相同，进行mutableCopy操作时，虽然数组内存地址发生了变化，但是数组元素的内存地址并没有发生变化（单层深拷贝）；对于可变对象，copy和mutableCopy都是内容复制，内存地址变化，但是数组元素的内存地址并没有发生变化（单层深拷贝）<br>集合类对象和非集合类对象的copy与mutablecopy<br>建议参照此篇分析 与网上大多数看法不一致 但个人感觉可信度较高 [<a href="https://joeshang.github.io/" target="_blank" rel="external">https://joeshang.github.io/</a>]</p>
 <p>demo1:<br>NSString <em>origStr = @”123456”;<br>NSString </em>strCopy = [origStr copy];<br>NSMutableString *strMtCopy = [origStr mutablecopy];</p>
 <p>demo2:<br>NSMutableStr <em>origStr = [NSMutableString stringWithFormat:@”123456”];<br>NSString </em>strCopy = [origStr copy];<br>NSMutableStr *strMuCopy = [origStr mutablecopy];</p>
 <p>demo3:<br>NSArray <em>arr = @[@”a”, @”b”,@”c”];<br>NSArray </em>arrCopy = [array copy];<br>NSMutableArray *arrayMCopy = [array mutableCopy];</p>
@@ -67,5 +67,5 @@ KVO一般的使用场景是数据，需求是数据变化，比如股票价格�
 extension就是匿名的分类，只有头文件没有实现文件。只能扩展方法，不能添加成员变量。扩展的方法只能在原类中实现。例如你扩展NSString,那么你只能在NSString的.m实现（这是不可能的），所以尽量少用扩展。用分类就可以了
 在iOS中继承是单继承，既只能有一个父类。在继承中，子类可以使用父类的方法和变量，当子类想对本类或者父类的变量进行初始化，那么需要重写init（）方法 。父类也可以访问子类的方法和成员变量。、
 </code></pre><h3 id="18、将一个自定义对象序列化至磁盘"><a href="#18、将一个自定义对象序列化至磁盘" class="headerlink" title="18、将一个自定义对象序列化至磁盘"></a>18、将一个自定义对象序列化至磁盘</h3><pre><code>自定义对象实现&lt;NSCoding&gt;协议，实现-(instancetype)initWithCoder:(NSCoder *)aDecoder 方法和-(void)encodeWithCoder:(NSCoder *)aCoder方法
-使用NSKeyedArchiver进行读取就可以了。
+使用NSKeyedArchiver进行读写就可以了。
 </code></pre></div></article></div></main><footer><div class="paginator"><a href="/yu.github.io/2017/12/02/iOS 界面搭建/" class="prev">PREV</a><a href="/yu.github.io/2017/10/18/iOS 遇见的UIWindow问题/" class="next">NEXT</a></div><div class="copyright"><p>© 2017 - 2018 <a href="https://yuweizhong.github.io/yu.github.io">YuWeizhong</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
