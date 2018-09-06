@@ -6,7 +6,7 @@
   <link href="/yu.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuweizhong.github.io/yu.github.io/"/>
-  <updated>2018-09-04T03:15:30.827Z</updated>
+  <updated>2018-09-06T06:44:13.485Z</updated>
   <id>https://yuweizhong.github.io/yu.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Toll-Free Bridged</title>
+    <link href="https://yuweizhong.github.io/yu.github.io/2018/09/06/Toll-Free-Bridged/"/>
+    <id>https://yuweizhong.github.io/yu.github.io/2018/09/06/Toll-Free-Bridged/</id>
+    <published>2018-09-06T06:43:41.000Z</published>
+    <updated>2018-09-06T06:44:13.485Z</updated>
+    
+    <content type="html"><![CDATA[<p>穿插一个小的知识点 介绍一下Toll-free bridged</p><blockquote><p> Toll-free bridging,简称为TFB，是一种允许某些ObjC类与其对应的CoreFoundation类之间可以互换使用的机制。比如 NSString与CFString是桥接(bridged)的, 这意味着可以将任意NSString当做CFString使用，也可以将任意的CFString当做NSString使用。</p></blockquote><p>那么既然有了NSString 为什么还需要CFString 的存在呢？<br><a href="https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFDesignConcepts/Articles/tollFreeBridgedTypes.html#/apple_ref/doc/uid/TP40010677" target="_blank" rel="external">官网</a>解释：</p><blockquote><p>CFString provides a suite of efficient string-manipulation and string-conversion functions. It offers seamless Unicode support and facilitates the sharing of data between Cocoa and C-based programs</p></blockquote><p> 翻译</p><blockquote><p>CFString提供了一套高效的字符串操作和字符串转换功能。 它提供无缝的Unicode支持，并促进Cocoa和基于C的程序之间的数据共享。</p></blockquote><h2 id="Toll-Free-Bridged-Types"><a href="#Toll-Free-Bridged-Types" class="headerlink" title="Toll-Free Bridged Types"></a>Toll-Free Bridged Types</h2><p><img src="https://raw.githubusercontent.com/yuweizhong/Resources/master/Img/tfb.png" alt="TFB"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;穿插一个小的知识点 介绍一下Toll-free bridged&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt; Toll-free bridging,简称为TFB，是一种允许某些ObjC类与其对应的CoreFoundation类之间可以互换使用的机制。比如 NSString与CF
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>RunTime</title>
