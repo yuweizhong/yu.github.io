@@ -6,7 +6,7 @@
   <link href="/yu.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuweizhong.github.io/yu.github.io/"/>
-  <updated>2018-10-10T12:25:47.430Z</updated>
+  <updated>2018-11-21T06:46:50.711Z</updated>
   <id>https://yuweizhong.github.io/yu.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS webview实践优化</title>
+    <link href="https://yuweizhong.github.io/yu.github.io/2018/11/21/iOS%20WebView%E5%AE%9E%E8%B7%B5%E4%BC%98%E5%8C%96/"/>
+    <id>https://yuweizhong.github.io/yu.github.io/2018/11/21/iOS WebView实践优化/</id>
+    <published>2018-11-21T06:45:55.000Z</published>
+    <updated>2018-11-21T06:46:50.711Z</updated>
+    
+    <content type="html"><![CDATA[<p>苹果为开发者提供给内嵌webview，UIWebView在iOS2.0之后就存在了，在iOS8.0之后苹果又为我们提供了WKWebView，性比来说，WKWebview性能高，稳定性好，占用的内存比较小。对于支持iOS8之后的应用，可以考虑使用WKWebView替换使用。</p><p>同时，在App开发中，内嵌WebView始终占有着一席之地。它能以较低的成本实现Android、iOS和Web的复用（跨平台），也可以冠冕堂皇的突破苹果对热更新的封锁。然而便利性的同时，WebView的性能体验却备受质疑，导致很多客户端中需要动态更新等页面时不得不采用其他方案（WEEX、ReactNative…）</p><hr><h2 id="WebView性能"><a href="#WebView性能" class="headerlink" title="WebView性能"></a>WebView性能</h2><p>从性能上来看，经常能听到很多人吐槽webview：白屏、打开速度比native慢、一直loading…..<br>从用户角度来看，加载webview大致经历一下几个过程：</p><ul><li>交互无反馈</li><li>到达新的页面，页面白屏</li><li>页面基本框架出现，但是没有数据；页面处于loading状态</li><li>出现所需的数据</li></ul><p>从程序角度看，初始化webview则经历一下几个过程：<br><img src="" alt="image"></p><p>因此，如何优化Webview，就从缩小这几个部分的时间来看。</p><h2 id="WebView初始化"><a href="#WebView初始化" class="headerlink" title="WebView初始化"></a>WebView初始化</h2><p> 当App首次打开时，默认是并不初始化浏览器内核的；只有当创建WebView实例的时候，才会创建WebView的基础框架。所以与浏览器不同，App中打开WebView的第一步并不是建立连接，而是启动浏览器内核。</p><p>在浏览器中，我们输入地址时（甚至在之前），浏览器就可以开始加载页面。<br>而在客户端中，客户端需要先花费时间初始化WebView完成后，才开始加载。</p><p><a href="https://mp.weixin.qq.com/s/evzDnTsHrAr2b9jcevwBzA?" target="_blank" rel="external">手机QQ Hybrid架构</a></p><h2 id="建立连接-服务器处理"><a href="#建立连接-服务器处理" class="headerlink" title="建立连接/服务器处理"></a>建立连接/服务器处理</h2><ul><li>DNS采用和客户端API相同的域名——客户端首次打开都会请求某个域名，其DNS将会被系统缓存，当重新打开WebView的时候，如果请求了不同的域名，需要重新获取对应域名的IP，也是一部分时间的消耗。</li><li>Eag &amp;&amp; Last-Modified—–webview缓存策略优化，判断服务器数据更新状态判断是否加载本地缓存</li><li>Transfer-Encoding: chunked —–如果采用普通方式输出页面，则页面会在服务器请求完所有API并处理完成后开始传输。浏览器要在后端所有API都加载完成后才能开始解析。如果采用chunk-encoding: chunked，并优先将页面的静态部分输出；然后处理API请求，并最终返回页面，可以让后端的API请求和前端的资源加载同时进行。两者的总共后端时间并没有区别，但是可以提升首字节速度，从而让前端加载资源和后端加载API不互相阻塞 </li><li>前端框架、脚本执行、js/css标签格式、js解析/编译/执行……</li></ul><h2 id="webview内存消耗"><a href="#webview内存消耗" class="headerlink" title="webview内存消耗"></a>webview内存消耗</h2><h2 id="webview-安全"><a href="#webview-安全" class="headerlink" title="webview 安全"></a>webview 安全</h2><p>参考<br>    <a href="https://tech.meituan.com/WebViewPerf.html" target="_blank" rel="external">WebView性能、体验分析与优化</a><br>    <a href="https://mp.weixin.qq.com/s/evzDnTsHrAr2b9jcevwBzA?" target="_blank" rel="external">手机QQ Hybrid架构</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;苹果为开发者提供给内嵌webview，UIWebView在iOS2.0之后就存在了，在iOS8.0之后苹果又为我们提供了WKWebView，性比来说，WKWebview性能高，稳定性好，占用的内存比较小。对于支持iOS8之后的应用，可以考虑使用WKWebView替换使用。&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="webview" scheme="https://yuweizhong.github.io/yu.github.io/tags/webview/"/>
+    
+  </entry>
   
   <entry>
     <title>ReadyForBAT---UI</title>
