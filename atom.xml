@@ -6,7 +6,7 @@
   <link href="/yu.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuweizhong.github.io/yu.github.io/"/>
-  <updated>2018-11-21T06:46:50.711Z</updated>
+  <updated>2018-12-05T06:24:55.629Z</updated>
   <id>https://yuweizhong.github.io/yu.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>.dSYM分析crash</title>
+    <link href="https://yuweizhong.github.io/yu.github.io/2018/12/05/iOS%20.dSYM%E5%88%86%E6%9E%90crash/"/>
+    <id>https://yuweizhong.github.io/yu.github.io/2018/12/05/iOS .dSYM分析crash/</id>
+    <published>2018-12-05T06:22:21.000Z</published>
+    <updated>2018-12-05T06:24:55.629Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、crash日志"><a href="#1、crash日志" class="headerlink" title="1、crash日志"></a>1、crash日志</h3><blockquote><ul><li><p>崩溃设备连接电脑，在Xcode-&gt;window-&gt;Devices-&gt;找到你的设备-&gt;View Devices Logs中找到crash，导出即可（如果打包的电脑跟你解析crash的电脑是同一个的话，那么这里导出的日志应该是解析好的，这是因为在打包的时候会建立 .app 及 .dYSM两个文件的索引，所以可以自动解析 crash log 文件）/ windows下可以用同步助手等软件查看崩溃日志，后缀名为.ips</p></li><li><p>手动代码捕捉崩溃日志或者使用一些第三方崩溃统计[如iTunes connect里面的app分析、国内的bugly、bugTag、蒲公英、友盟,国外的Crashlytics、Flurry]</p></li></ul></blockquote><h3 id="2、dSYM"><a href="#2、dSYM" class="headerlink" title="2、dSYM"></a>2、dSYM</h3><blockquote><p>.dSYM文件（debugger Symbols）是一个符号表文件,包含了一个16进制的保存函数地址映射信息的中转文件, 所有Debug的symbols都在这个文件中(包括文件名、函数名、行号等).一般Xcode项目每次编译后(release), 都会产生一个新的.dSYM文件和.app文件,这两者有一个共同的UUID.</p></blockquote><h3 id="3、symbolicatecrash"><a href="#3、symbolicatecrash" class="headerlink" title="3、symbolicatecrash"></a>3、symbolicatecrash</h3><blockquote><p>XCode为我们提供的工具 位于 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/PrivateFrameworks/DTDeviceKitBase.framework/Versions/A/Resources/./symbolicatecrash<br>可以通过命令行来寻找</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find /Applications/Xcode.app -name symbolicatecrash -type f</div></pre></td></tr></table></figure><h3 id="4、crash分析"><a href="#4、crash分析" class="headerlink" title="4、crash分析"></a>4、crash分析</h3><p>准备好上述文件和工具后，可以讲它们都copy到同一文件夹下</p><ol><li>检查uuid是否一致(不一致则无法进行接下去分析)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dwarfdump --uuid xxx.app/xxx</div><div class="line">dwarfdump --uuid xxx.app.dSYM</div><div class="line">crash文件打开后Binary Images:后面第一个大长串就是crash文件的uuid</div></pre></td></tr></table></figure></li></ol><p>2.symbolicatecrash命令分析生成Log.crash，可以在里面看到对应崩溃的代码行位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./symbolicatecrash ....../xxx.crash ....../xxx.app.dSYM &gt; Log.crash</div></pre></td></tr></table></figure></p><blockquote><p>可能出现以下错误 Error: “DEVELOPER_DIR” is not defined at ./symbolicatecrash line 69.<br>是环境变量配置的原因，执行以下命令即可</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export DEVELOPER_DIR=&quot;/Applications/Xcode\ 8.1.app/Contents/Developer&quot;</div></pre></td></tr></table></figure><p>参考<a href="http://www.cocoachina.com/ios/20150505/11731.html" target="_blank" rel="external">http://www.cocoachina.com/ios/20150505/11731.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1、crash日志&quot;&gt;&lt;a href=&quot;#1、crash日志&quot; class=&quot;headerlink&quot; title=&quot;1、crash日志&quot;&gt;&lt;/a&gt;1、crash日志&lt;/h3&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;崩溃设备连接电脑，在Xcode-&amp;gt;
+      
+    
+    </summary>
+    
+    
+      <category term="crash" scheme="https://yuweizhong.github.io/yu.github.io/tags/crash/"/>
+    
+  </entry>
   
   <entry>
     <title>iOS webview实践优化</title>

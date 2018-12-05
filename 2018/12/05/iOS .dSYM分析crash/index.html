@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> .dSYM分析crash · YuWeizhong</title><meta name="description" content=".dSYM分析crash - YuWeizhong"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/yu.github.io/favicon.png"><link rel="stylesheet" href="/yu.github.io/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://yuweizhong.github.io/yu.github.io/atom.xml" title="YuWeizhong"></head><body><div class="wrap"><header><a href="/yu.github.io/" class="logo-link"><img src="/yu.github.io/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/yu.github.io/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/yu.github.io/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/u/3537156417" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/yuweizhong" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/yu.github.io/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">.dSYM分析crash</h1><div class="post-info">2018年12月5日</div><div class="post-content"><h3 id="1、crash日志"><a href="#1、crash日志" class="headerlink" title="1、crash日志"></a>1、crash日志</h3><blockquote>
+<ul>
+<li><p>崩溃设备连接电脑，在Xcode-&gt;window-&gt;Devices-&gt;找到你的设备-&gt;View Devices Logs中找到crash，导出即可（如果打包的电脑跟你解析crash的电脑是同一个的话，那么这里导出的日志应该是解析好的，这是因为在打包的时候会建立 .app 及 .dYSM两个文件的索引，所以可以自动解析 crash log 文件）/ windows下可以用同步助手等软件查看崩溃日志，后缀名为.ips</p>
+</li>
+<li><p>手动代码捕捉崩溃日志或者使用一些第三方崩溃统计[如iTunes connect里面的app分析、国内的bugly、bugTag、蒲公英、友盟,国外的Crashlytics、Flurry]</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="2、dSYM"><a href="#2、dSYM" class="headerlink" title="2、dSYM"></a>2、dSYM</h3><blockquote>
+<p>.dSYM文件（debugger Symbols）是一个符号表文件,包含了一个16进制的保存函数地址映射信息的中转文件, 所有Debug的symbols都在这个文件中(包括文件名、函数名、行号等).一般Xcode项目每次编译后(release), 都会产生一个新的.dSYM文件和.app文件,这两者有一个共同的UUID.</p>
+</blockquote>
+<h3 id="3、symbolicatecrash"><a href="#3、symbolicatecrash" class="headerlink" title="3、symbolicatecrash"></a>3、symbolicatecrash</h3><blockquote>
+<p>XCode为我们提供的工具 位于 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/PrivateFrameworks/DTDeviceKitBase.framework/Versions/A/Resources/./symbolicatecrash<br>可以通过命令行来寻找</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find /Applications/Xcode.app -name symbolicatecrash -type f</div></pre></td></tr></table></figure>
+<h3 id="4、crash分析"><a href="#4、crash分析" class="headerlink" title="4、crash分析"></a>4、crash分析</h3><p>准备好上述文件和工具后，可以讲它们都copy到同一文件夹下</p>
+<ol>
+<li>检查uuid是否一致(不一致则无法进行接下去分析)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dwarfdump --uuid xxx.app/xxx</div><div class="line">dwarfdump --uuid xxx.app.dSYM</div><div class="line">crash文件打开后Binary Images:后面第一个大长串就是crash文件的uuid</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.symbolicatecrash命令分析生成Log.crash，可以在里面看到对应崩溃的代码行位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./symbolicatecrash ....../xxx.crash ....../xxx.app.dSYM &gt; Log.crash</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>可能出现以下错误 Error: “DEVELOPER_DIR” is not defined at ./symbolicatecrash line 69.<br>是环境变量配置的原因，执行以下命令即可</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export DEVELOPER_DIR=&quot;/Applications/Xcode\ 8.1.app/Contents/Developer&quot;</div></pre></td></tr></table></figure>
+<p>参考<a href="http://www.cocoachina.com/ios/20150505/11731.html" target="_blank" rel="external">http://www.cocoachina.com/ios/20150505/11731.html</a></p>
+</div></article></div></main><footer><div class="paginator"><a href="/yu.github.io/2018/11/21/iOS WebView实践优化/" class="next">NEXT</a></div><div class="copyright"><p>© 2017 - 2018 <a href="https://yuweizhong.github.io/yu.github.io">YuWeizhong</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
